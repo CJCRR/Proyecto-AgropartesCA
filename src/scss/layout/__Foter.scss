@@ -1,0 +1,45 @@
+footer {
+    background-color: black;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    padding: 70px;
+    text-align: center;
+    .linkFooter {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        @include hover;
+    }
+    .box {
+        img {
+            width: 250px;
+            margin: 30px;
+        }
+    }
+    .box {
+        h2 {
+            font-size: 30px;
+            color: $color-principal3;
+        }
+    }
+    .red-social {
+        a {
+            font-size: 25px;
+            margin: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 762px) {
+    .pie-pagina {
+        display: block;
+        align-items: center;
+        text-align: center;
+    }
+    .seccion-nosotros {
+        p {
+            width: 95%;
+        }
+    }
+}

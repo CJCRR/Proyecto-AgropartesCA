@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none; 
+    font-family:'Barlow Semi Condensed', sans-serif;
+}
+
+.titulo {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../../fondoRe.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    div {
+        display: flex;
+        align-items: end;
+        justify-content: end;
+        .nombre {
+            display: flex;
+            flex-direction: column;
+            padding-top: 300px;
+            margin-right: 300px;
+            h1 {
+                font-size: 50px;
+                color: $color-principal3;
+                margin-left: 100px;
+            }
+            h3 {
+                color: $color-principal3;
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+.seccion-nosotros {
+    min-height: 35vh;
+    background-color: $color-principal1;
+    text-align: center;
+    justify-content: center;
+    border: solid 2px $color-principal1;
+    h2 {
+        color: $color-principal3;
+        font-size: 35px;
+        padding-top: 15px;
+    }
+    p {
+        @include medidas-parrafos;
+    }
+    hr {
+        margin-top: 25px;
+        color: $color-principal3;
+    }
+    .imgn {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        img {
+            width: 150px;
+            margin: 10px 30px 0 30px;
+        }
+    }
+    h4 {
+        text-align: right;
+        padding: 15px;
+        a {
+            @include hover;
+        }
+    }
+}
+
+.Footer {
+    width: 100%;
+    height: 100%;
+}

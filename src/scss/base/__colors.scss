@@ -1,0 +1,48 @@
+$color-principal1: rgb(226, 83, 0);
+$color-prnicipal2: black;
+$color-principal3: white;
+$color-hover: rgb(177, 111, 54);
+$letra-1: 'Barlow Semi Condensed', sans-serif;
+
+@mixin hover {
+    color: $color-principal3;
+        text-decoration: none;
+        text-align: center;
+        &:hover {
+            color: $color-hover;
+            transition: 0.9s;
+        }
+}
+
+@mixin hover-2 {
+    color: $color-prnicipal2;
+        text-decoration: none;
+        text-align: center;
+        &:hover {
+            color: $color-hover;
+            transition: 0.9s;
+        }
+}
+
+@mixin medidas-parrafos {
+    display: inline-block;
+    color: $color-principal3;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 80%;
+}
+
+@mixin medidas-parrafos-2 {
+    display: inline-block;
+    color: $color-prnicipal2;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 80%;
+}
+
+@mixin medidas ($ancho, $alto) {
+    width: $ancho;
+    height: $alto;
+}

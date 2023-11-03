@@ -1,0 +1,232 @@
+.products__path{
+    width: 60vw;
+    margin: 1em auto 0;
+    font-family: $numbers;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 2rem;
+    width: 60vw;
+    margin: 1em auto 3em;
+    .product__card {
+        @extend %card__base;
+        border: 1px solid white;
+        &.card {
+            
+            .card__image {
+                width: 100%;
+                padding: 10px;
+                background-color: white;
+            }
+            .card__footer {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                padding: 1rem;
+                text-align: center;
+                .card__title {
+                    @extend %card__title;
+                    color: $color-principal1;
+                    size: 1.5rem;
+                    
+                }
+                .card__price {
+                    @extend %card__price;
+                }
+            }
+        }
+    }
+}
+.detail__card {
+    @extend %card__base;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    display: flex;
+    flex-direction: row;
+    width: 1250px;
+    height: 700px;
+    border-top: 1px solid white;
+    margin: 2rem auto;
+    transform: scale(0);
+    animation: scale 0.3s ease forwards;
+
+    &.card {
+        .card__image{
+            width: 50% ;
+            display: grid;
+            place-items: center;
+            .image{
+                width: 80%;
+                height: auto;
+            }
+        }
+        .card__body {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content:space-around;
+            padding: 0 2rem 4.5rem;
+            gap: 1.5rem;
+
+            .card__header{
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                .card__title {
+                    @extend %card__title;
+                    font-size: 1.9rem;  
+                }
+                .card__price {
+                    @extend %card__price;
+                    font-size: 32px;
+                }
+            }
+            .card__description {
+                width: 60%;
+                font: {
+                    family: $secondary;
+                    size: 1.2rem;
+                }
+            }
+            .card__button{
+                justify-self: flex-end;
+                background: $color-principal1;
+                border: none;
+                color: white;
+                padding: 20px 37px;
+                cursor: pointer;
+                font : {
+                    family:$secondary;
+                    weight: 600;
+                    size: 1rem;
+                }
+            }
+            
+        }
+        
+    }
+    @keyframes scale {
+        from {
+            transform: scale(0);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+}
+
+.cart__card{
+    &.card{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        align-items: center;
+        .card__desc{
+            display: flex;
+            flex-direction: column;
+            .card__title{
+                font: {
+                    size: 14px
+                };
+            }
+            .card__category{
+                color: black;
+                text-transform: capitalize;
+                font: {
+                    size: 12px
+                };
+            }
+        }
+        .card__image{
+            .image{
+                width: 80px;
+            }
+        }
+        .card__price{
+            .price{
+                font: {
+                    weight: bold;
+                    family: $numbers;
+                };
+            }
+        }
+        .card__actions{
+            position: absolute;
+            right: 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .delete{
+                height: 1.5em;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.card { 
+    text-align: center;
+        background: #f5f5f5;
+        position: relative;
+        overflow: visible;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        .card-img-top {
+            background-color: #ff6600;
+            height: 100%;
+            border-radius: 10px;
+            transition: .3s ease;
+            &:hover {
+                transform: translateY(-25%);
+                box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+            }
+        }
+        .card-info {
+            padding-top: 2%;
+            h5 {
+                
+                font-weight: 900;
+                font-size: 1em;
+                line-height: 1.5;
+            }
+            p {
+                font-size: .9em;
+            }
+        }
+        .card-footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+            .text-title {
+                font-weight: 900;
+                font-size: 0.8em;
+                line-height: 1.5;
+            }
+            .productoAgregar {
+                border: 1px solid #252525;
+                display: flex;
+                padding: .3em;
+                cursor: pointer;
+                border-radius: 50px;
+                transition: .3s ease-in-out;
+                &:hover {
+                    border: 1px solid $color-principal1;
+                    background-color: $color-principal1;
+                }
+                .svg-icon {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+        
+    }   
+

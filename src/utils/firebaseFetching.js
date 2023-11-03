@@ -10,7 +10,7 @@ import {
 import { db } from "../firebase";
 
 const productsCollection = collection(db, "products");
-const categoriesCollection = collection(db, "products");
+const categoriesCollection = collection(db, "category");
 const ordersCollection = collection(db, "orders");
 
 export const getAllProducts = async () => {

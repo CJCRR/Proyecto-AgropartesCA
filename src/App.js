@@ -7,6 +7,7 @@ import Nosotros from "./pages/Nosotros/Nosotros";
 import Checkout from "./pages/Checkout/Checkout";
 import Home from "./pages/Home/Home";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js'
 
 
 function App() {

@@ -6,9 +6,9 @@ import Footer from "../../components/Footer/Footer";
 const Nosotros = () => {
   return (
     <>
-    <div>
+    
     <Header />
-    </div>
+    
 
       <section class="p-nosotros">
         <h2>QUIENES SOMOS...</h2>

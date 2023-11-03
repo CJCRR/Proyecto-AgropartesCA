@@ -1,19 +1,21 @@
 .cart-widgets {
-    position: absolute;
+    margin-left: 35px;
     right: -80px;
     cursor: pointer;
     &__shopping-bag {
-        width: 30px;
-        position: relative;
+        width: 40px;
+        position: absolute;
     }
     &__items-counter{
-        position: absolute;
+        position: relative;
         font-family: $numbers;
+        margin:  11px;
         font-weight: 700;
         background-color: $color-principal1;
         border-radius: 50%;
         font-size: 16px;
-        padding: 0 6px;
+
+        padding: 0 5px;
         text-align: center;
         right: -12px;
         bottom: 0;

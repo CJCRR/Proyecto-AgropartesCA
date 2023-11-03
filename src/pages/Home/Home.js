@@ -7,9 +7,9 @@ import Footer from "../../components/Footer/Footer"
 const Home = () => {
   return (
     <>
-      
-      <div className="titulo">
       <Header />
+      <div className="titulo">
+      
         <div>
             <div className="nombre">
               <h1 className="display-1">AGROPARTES</h1>

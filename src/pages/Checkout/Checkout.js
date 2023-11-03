@@ -64,10 +64,7 @@ const Checkout = () => {
             })}
           </div>
           <hr className="divisor" />
-          <div className="flex-row cart__subtotal">
-            <h4>total</h4>
-            <span>${subTotal}</span>
-          </div>
+          
           <div className="flex-row cart__total">
             <h4>Total</h4>
             <span>${subTotal}</span>

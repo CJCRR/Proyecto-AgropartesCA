@@ -8,15 +8,9 @@
     <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1698938277/AGROPARTES_crc4ir.png" alt="Logo" width="100" height="100">
   </a>
 
-  <h1 align="center">Swoosh - Vintage store</h1>
-
 </div>
 
-<!-- ABOUT THE PROJECT -->
-[![Product Name Screen Shot][product-screenshot]](https://swoosh-ecommerce.vercel.app/)
-
 ## Acerca del proyecto
-
 Hola coders! , mi nombre es Cristohper Rodriguez quiero presentarles esta aplicacion de e-commerce que realize como proyecto final para el curso de ReactJS en la plataforma Coderhouse.
 
 Se trata de una aplicacion de venta de repuestos diesel.
@@ -24,8 +18,6 @@ Se trata de una aplicacion de venta de repuestos diesel.
 El formato de la pagina sigue el principio de una SPA(Single Page Application) permitiendo navegar entre las diferentes secciones de forma consistente y fluida.
 
 El diseño / maquetacion de la misma son propios, estos mismos fueron desarrollados por mi de principio a fin.
-
-
 
 <p align="right">(<a href="#readme-top">volver al inicio</a>)</p>
 

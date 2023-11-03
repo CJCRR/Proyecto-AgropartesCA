@@ -91,7 +91,7 @@ const Item = ({ product, showAs }) => {
   return (
     <>
       <Link to={`/item/detail/${product.id}`}>
-        <div className="card">
+        <div className="card h-100">
           <img className="card-img-top" src={product.image} alt={product.title} />
           <div className="card-info">
             <h3 className="text-title">{product.title}</h3>

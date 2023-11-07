@@ -42,7 +42,8 @@ const Checkout = () => {
     return <Order orderID={orderId} />;
   } else {
     return (
-      <div>
+      <>
+      <div className="container">
         <div className="purchase__container">
         <div className="checkout">
           <div className="contact">
@@ -70,11 +71,10 @@ const Checkout = () => {
             <span>${subTotal}</span>
           </div>
         </div>
-        <div>
-        </div>
+      </div>
       </div>
       <Footer />
-      </div>
+      </>
     );
   }
 };

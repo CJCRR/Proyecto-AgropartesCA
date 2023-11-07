@@ -1,5 +1,11 @@
+html {
+    height: 100%;
+}
+
 .app-container{
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 body{

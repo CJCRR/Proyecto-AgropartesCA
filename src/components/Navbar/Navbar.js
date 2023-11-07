@@ -39,10 +39,10 @@ const Navbar = () => {
               <Link to="/" className="nav__link nav-link">INICIO</Link>
             </li>
             <li className="nav-item">
-              <NavLink to="/shop" className="nav__link nav-item nav-link">PRODUCTOS</NavLink>
+              <NavLink to="/Productos" className="nav__link nav-item nav-link">PRODUCTOS</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/Nosotros" className="nav__link nav-link">NOSOTROS</NavLink>
+              <NavLink to="/Nosotros" className="nav__link nav-link nav-item">NOSOTROS</NavLink>
             </li>
             <NavDropdown className="nav__link nav-item" title="CATEGORIAS" id="collapsible-nav-dropdown" onClick={handleOpen}>
             <div className="navCategory nav-link">
@@ -59,6 +59,9 @@ const Navbar = () => {
                 })}
               </div>
             </NavDropdown>
+            <li>
+              <NavLink to="/Contacto" className="nav__link nav-link nav-item" >CONTACTO</NavLink>
+            </li>
           </ul>
         </div>
         

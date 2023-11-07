@@ -1,5 +1,8 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import instagram from "../../instagram.svg";
+import whatsapp from "../../whatsapp.svg";
+
 
 
 
@@ -20,9 +23,8 @@ export const Footer = () => {
             <div className="box">
                 <h2>SIGUENOS</h2>
                 <div className="red-social">
-                    <a href="#" className="fa fa-facebook"></a>
-                    <a href="https://www.instagram.com/agropartess/" className="fa fa-instagram"></a>
-                    <a href="#" className="fa fa-whatsapp"></a>
+                    <img src={instagram}   alt="instagram" className="fa fa-instagram"/>
+                    <img src={whatsapp}  alt="whatsapp" className="fa fa-whatsapp" />
                 </div>
             </div>
         </footer>

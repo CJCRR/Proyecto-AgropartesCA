@@ -1,0 +1,76 @@
+.contacto {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: $color-principal1;
+    .ubicacion {
+        background-color: $color-principal1;
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-around;
+        padding: 40px;
+        div {
+            h2 {
+                color: $color-principal3;
+                padding-bottom: 25px;
+            }
+        }
+        .direccion {
+            p {
+                color: $color-principal3;
+                font-size: 25px;
+                margin-bottom: 15px;
+            }
+        }
+        .red-social2 {
+            img {
+                width: 60px;
+                text-decoration: none;
+                color: $color-principal3;
+                font-size: 25px;
+                align-items:center;
+                margin: 20px;
+                &:hover {
+                    color: rgb(177, 111, 54);
+                    transition: 0.9s;
+                }
+            }
+        }
+    }
+    .mensaje {
+        form {
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 15px;
+            background-color: $color-principal3;
+            div {
+                margin-bottom: 15px;
+                width: 80%;
+                label {
+                    color: $color-prnicipal2;
+                    font-size: 20px;
+                }
+            }
+            .boton {
+                text-align: center;
+                .btn {
+                    background-color: $color-principal1;
+                        &:hover {
+                            color: $color-hover;
+                            transition: 0.9s;
+                        }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 762px) {
+    .ubicacion {
+        display: block;
+        text-align: center;
+        padding: 40px;
+    }
+}

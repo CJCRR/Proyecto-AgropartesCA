@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="link-de-la-app">
-    <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1698938277/AGROPARTES_crc4ir.png" alt="Logo" width="100" height="100">
+    <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1698938277/AGROPARTES_crc4ir.png" alt="Logo" width="300" height="300">
   </a>
 
 </div>

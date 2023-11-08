@@ -13,7 +13,7 @@ export const Footer = () => {
                 <h2>SOBRE NOSOTROS</h2>
                 <div className="nav flex-column">
                     <a className="linkFooter"><Link to="/" className="nav__link">INICIO</Link></a>
-                    <a className="linkFooter"><NavLink to="/shop" className="nav__link">PRODUCTOS</NavLink></a>
+                    <a className="linkFooter"><NavLink to="/Productos" className="nav__link">PRODUCTOS</NavLink></a>
                     <a className="linkFooter"><NavLink to="/contacto" className="nav__link">CONTACTO</NavLink></a>
                 </div>
             </div>

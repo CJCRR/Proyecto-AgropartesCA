@@ -29,7 +29,10 @@ const ItemDetailContainer = () => {
       {loading ? (
         <Loader />
       ) : (
-        <Item product={{ id, ...product }} showAs={"Detail"} />
+        <div className="detail">
+          <Item product={{ id, ...product }} showAs={"Detail"} />
+        </div>
+        
       )}
       <Footer />
     </>

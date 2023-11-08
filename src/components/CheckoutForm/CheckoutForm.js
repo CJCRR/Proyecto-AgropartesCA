@@ -78,7 +78,7 @@ const CheckoutForm = ({ setId }) => {
             <TextField label="Email" name="email" type="text" />
             <TextField label="Confirm Email" name="confirmEmail" type="text" />
             <button type="submit" className="form__submit">
-              {loading ? <ButtonLoader /> : "Complete purchase"}
+              {loading ? <ButtonLoader /> : "Completar compra"}
             </button>
           </Form>
         )}

@@ -43,9 +43,9 @@ const Checkout = () => {
   } else {
     return (
       <>
-      <div className="container">
-        <div className="purchase__container">
-        <div className="checkout">
+    <div className="container">
+      <div className="purchase__container row">
+        <div className="checkout col order-1 order-md-2">
           <div className="contact">
             <div className="contact__information">
               <h1 className="contact__title">Complete con su informacion</h1>
@@ -53,7 +53,7 @@ const Checkout = () => {
             </div>
           </div>
         </div>
-        <div className="summary">
+        <div className="summary col order-lg-2">
           <h1 className="summary__title">Resumen de compra</h1>
           
           <div className="summary__items">
@@ -72,7 +72,7 @@ const Checkout = () => {
           </div>
         </div>
       </div>
-      </div>
+    </div>
       <Footer />
       </>
     );

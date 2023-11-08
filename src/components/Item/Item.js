@@ -40,8 +40,8 @@ const Item = ({ product, showAs }) => {
 
   if (showAs === "Detail") {
     return (
-      <div className="detail__card card">
-        <div className="card__image">
+      <div className="card detail__card col-12">
+        <div className="card__image ">
           <img src={product.image} alt={product.title} className="image" />
         </div>
         <div className="card__body">

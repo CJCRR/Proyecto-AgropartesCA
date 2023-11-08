@@ -8,10 +8,9 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div className="titulo">
-      
-        <div>
-            <div className="nombre">
+      <div className="inicio">
+        <div className="row align-items-center header-main">
+            <div className="titulo col-12 col-md-8 container">
               <h1 className="display-1">AGROPARTES</h1>
               <h3 >CALIDAD EN TODOS SUS PRODUCTOS</h3>
             </div>

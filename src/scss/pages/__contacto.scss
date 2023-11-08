@@ -1,14 +1,11 @@
 .contacto {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    min-height: 60vh;
     background-color: $color-principal1;
     .ubicacion {
         background-color: $color-principal1;
-        display:grid;
-        grid-template-columns: repeat(2, 1fr);
         justify-content: space-around;
-        padding: 40px;
+        margin-top: 40px;
+        gap: 50px;
         div {
             h2 {
                 color: $color-principal3;
@@ -67,10 +64,18 @@
     }
 }
 
-@media only screen and (max-width: 762px) {
+@media only screen and (min-width: 768px) {
     .ubicacion {
-        display: block;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .ubicacion {
         text-align: center;
-        padding: 40px;
+        .ratio {
+            margin-top: 20px;
+        }
     }
 }

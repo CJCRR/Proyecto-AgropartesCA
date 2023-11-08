@@ -9,10 +9,10 @@ const ItemList = ({ products, category }) => {
       <Header showAs="Shadow" />
       <h1 className="products__path">TODOS LOS PRODUCTOS</h1>
 
-      <div className="products">
+      <div className="products row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2 ">
         {products &&
           products.map((product) => {
-            return <Item className='row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2' key={product.id} product={product} />;
+            return <Item key={product.id} product={product} />;
           })}
       </div>
       <Footer />

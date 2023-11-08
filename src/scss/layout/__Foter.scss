@@ -1,9 +1,10 @@
+
+
 footer {
     margin-top: auto;
     background-color: black;
     display:grid;
     grid-template-columns: repeat(3, 1fr);
-
     padding: 70px;
     text-align: center;
     .linkFooter {
@@ -14,8 +15,7 @@ footer {
     }
     .box {
         img {
-            width: 250px;
-            margin: 30px;
+            width: 235px;
         }
     }
     .box {

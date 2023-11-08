@@ -6,11 +6,9 @@ import Footer from "../../components/Footer/Footer";
 const Nosotros = () => {
   return (
     <>
-    
     <Header />
-    
 
-      <div className="nosotros">
+    <div className="nosotros">
       <section class="p-nosotros">
         <h2>QUIENES SOMOS...</h2>
         <p>Somos una empresa con 8 años de experiencia, dedicada a la comercialización de repuestos de alto nivel para
@@ -49,7 +47,7 @@ const Nosotros = () => {
             </div>
         </div>
       </section>
-      </div>
+    </div>
       
       <div className="Footer">
         <Footer />

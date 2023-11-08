@@ -12,9 +12,9 @@ const Contacto = () => {
         <Header />
         
         <div className="contacto">
-            <div className="container justify-content-center ubicacion">
-                <div>
-                    <h2>UBICNOS EN</h2>
+            <div className="ubicacion container justify-content-center">
+                <div className="">
+                    <h2>UBICANOS EN</h2>
                     <div className="direccion">
                         <p>Ciudad Bolivar, Estado Bolivar</p>
                         <p>Av. Jesus Soto, Edif. Graciangela, local 1b.</p>
@@ -35,9 +35,8 @@ const Contacto = () => {
                     allowFullScreen=""
                     aria-hidden="false"
                     tabIndex="0"
-                />
+                    />
                 </div>
-                
             </div>
         </div>
         

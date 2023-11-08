@@ -3,16 +3,13 @@
     padding: 0;
     list-style: none; 
     font-family:'Barlow Semi Condensed', sans-serif;
-
 }
-
 
 .nosotros{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-
 
 .nav-2 {
     background-color: $color-principal3;
@@ -33,7 +30,6 @@
     background-color: $color-principal1;
     text-align: center;
     min-height: 35vh;
-    padding-top: 10px;
     h2 {
         margin-top: 50px;
         font-size: 40px;
@@ -48,14 +44,14 @@
 .p2-nosotros {
     
     background-color: $color-principal3;
-    max-height: 90vh;
+    min-height: 35vh;
     text-align: center;
     justify-content: space-between;
     h2 {
         font-size: 40px;
         text-align: center;
         color: $color-prnicipal2;
-        padding-top: 60px;
+        margin-top: 30px;
     }
     p {
         @include medidas-parrafos-2;

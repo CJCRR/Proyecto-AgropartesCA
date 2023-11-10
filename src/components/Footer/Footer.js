@@ -23,7 +23,7 @@ export const Footer = () => {
             <div className="box">
                 <h2>SIGUENOS</h2>
                 <div className="red-social">
-                    <img src={instagram}   alt="instagram" className="fa fa-instagram"/>
+                    <a href="https://www.instagram.com/agropartess/" target="_blank"><img src={instagram}   alt="instagram" className="fa fa-instagram"/></a>
                     <img src={whatsapp}  alt="whatsapp" className="fa fa-whatsapp" />
                 </div>
             </div>

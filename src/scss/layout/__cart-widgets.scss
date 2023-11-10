@@ -2,6 +2,7 @@
     margin-left: 35px;
     right: -80px;
     cursor: pointer;
+    @include hover-2;
     &__shopping-bag {
         width: 40px;
         position: absolute;

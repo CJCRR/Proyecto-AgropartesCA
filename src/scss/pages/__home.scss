@@ -15,6 +15,7 @@
     background-repeat: no-repeat;
     color: $color-principal3;
     .header-main {
+        max-width: 100%;
         min-height: 70vh;
         .titulo {
             display: flex;
@@ -59,8 +60,12 @@
         align-items: center;
         flex-wrap: wrap;
         img {
-            width: 150px;
+            width: 200px;
             margin: 10px 30px 0 30px;
+            transition: filter 0.4s;
+            &:hover {
+                filter: opacity(0.5);
+            }
         }
     }
     h4 {
@@ -72,3 +77,119 @@
     }
 }
 
+
+.servicios-1 {
+    background-image: url(../../npr.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    h1 {
+        color: black;
+        margin-left: 200px;
+    }
+}
+.servicios-2 {
+    display: flex;
+    justify-content: space-evenly;
+    @include hover;
+    .item-hints {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        .hint {
+            margin: 20px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .hint-dot {
+                z-index: 3;
+                border: 4px solid black;
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                font-size: 90px;
+                -webkit-transform: translate(-0%, -0%) scale(0.95);
+                transform: translate(-0%, -0%) scale(0.95);
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: black;
+                background-color: black;
+                @include hover;
+            }
+            .hint-content {
+                width: 230px;
+                position: absolute;
+                z-index: 5;
+                padding: 22px 0;
+                opacity: 0;
+                transition: opacity 0.7s ease, visibility 0.7s ease;
+                color: rgb(177, 111, 54);
+                visibility: hidden;
+                pointer-events: none;
+                @include hover;
+                p {
+                    font-size: 20px;
+                }
+                &::after {
+                    -webkit-transform-origin: 0 50%;
+                    transform-origin: 0 50%;
+                    -webkit-transform: rotate(-225deg);
+                    transform: rotate(-225deg);
+                    bottom: 29px;
+                    left: 0;
+                    width: 26px;
+                    content: "";
+                    background-color: black;
+                    height: 4px;
+                    position: absolute;
+                    opacity: 1;
+                    -webkit-transition: opacity 0.5s ease;
+                    transition: opacity 0.5s ease;
+                    -webkit-transition-delay: 0s;
+                    transition-delay: 0s;
+                }
+                &::before {
+                    width: 0px;
+                    bottom: 29px;
+                    left: 0;
+                    content: "";
+                    background-color: black;
+                    height: 4px;
+                    position: absolute;
+                    transition: width 0.4s;
+                }
+            }
+        }
+    }
+    .item-hints .hint:hover .hint-content {
+        position: absolute;
+        z-index: 5;
+        padding: 20px 0;
+        opacity: 1;
+        -webkit-transition: opacity 0.7s ease, visibility 0.7s ease;
+        transition: opacity 0.7s ease, visibility 0.7s ease;
+        color: black;
+        visibility: visible;
+        pointer-events: none;
+    }
+    .item-hints .hint:hover .hint-content::before {
+        width: 180px;
+        transition: width 0.4s;
+    }
+    .item-hints .hint:hover .hint-content::after {
+        opacity: 1;
+        visibility: visible;
+    }
+    .item-hints .hint[data-position="4"] .hint-content {
+        bottom: 124px;
+        left: 50%;
+        margin-left: 56px;
+    }
+}

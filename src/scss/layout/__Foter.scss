@@ -1,11 +1,9 @@
 
-
 footer {
-    margin-top: auto;
     background-color: black;
     display:grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 70px;
+    padding: 30px;
     text-align: center;
     .linkFooter {
         display: flex;
@@ -15,7 +13,8 @@ footer {
     }
     .box {
         img {
-            width: 235px;
+            width: 100%;
+            height: auto;
         }
     }
     .box {
@@ -33,7 +32,19 @@ footer {
     }
 }
 
-
+.footer-bottom {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: black;
+    backdrop-filter: blur(10px);
+    small {
+        font-size: 16px;
+        margin: 0 4px;
+    }
+}
 
 
 @media only screen and (max-width: 762px) {

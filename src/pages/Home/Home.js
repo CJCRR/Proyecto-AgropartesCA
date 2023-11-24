@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer"
+import { Icon } from '@iconify/react';
 
 
 const Home = () => {
@@ -29,6 +30,52 @@ const Home = () => {
             <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1698938282/pist_jhkovr.png" className="pist" alt=""/>
         </div>
         <h4><NavLink to="/Nosotros">Leer mas</NavLink></h4>
+      </div>
+      <div className="servicios-1">
+        
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 container servicios-2">
+        <div className="item-hints col">
+          <div className="hint" data-position="4">
+            <span className="hint-radius"></span>
+            <span className="hint-dot"><Icon icon="iconoir:delivery-truck" /></span>
+            <div className="hint-content do--split-children">
+              <p>ENVIOS NACIONALES</p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="item-hints col">
+          <div className="hint" data-position="4">
+            <span className="hint-radius"></span>
+            <span className="hint-dot"><Icon icon="fluent:wallet-credit-card-20-regular" className="iconServicios" /></span>
+            <div className="hint-content do--split-children">
+              <p>TODOS LOS MEDIOS DE PAGO</p>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        <div className="item-hints col">
+          <div className="hint" data-position="4">
+            <span className="hint-radius"></span>
+            <span className="hint-dot"><Icon icon="lucide:package-check" /></span>
+            <div className="hint-content do--split-children">
+              <p>PRODUCTO DE CALIDAD</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="item-hints col">
+          <div className="hint" data-position="4">
+            <span className="hint-radius"></span>
+            <span className="hint-dot"><Icon icon="lucide:package-search" /></span>
+            <div className="hint-content do--split-children">
+              <p>VARIEDAD DE PRODUCTOS</p>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
 
       <div className="Footer">

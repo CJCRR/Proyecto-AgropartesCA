@@ -8,17 +8,19 @@ import whatsapp from "../../whatsapp.svg";
 
 export const Footer = () => {
     return(
-        <footer className="pie-pagina">
+        <div>
+            <footer className="pie-pagina">
             <div className="box">
                 <h2>SOBRE NOSOTROS</h2>
                 <div className="nav flex-column">
                     <a className="linkFooter"><Link to="/" className="nav__link">INICIO</Link></a>
                     <a className="linkFooter"><NavLink to="/Productos" className="nav__link">PRODUCTOS</NavLink></a>
+                    <a className="linkFooter"><NavLink to="/Nosotros" className="nav__link">NOSOTROS</NavLink></a>
                     <a className="linkFooter"><NavLink to="/contacto" className="nav__link">CONTACTO</NavLink></a>
                 </div>
             </div>
             <div className="box">
-                        <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1698938277/AGROPARTES_crc4ir.png" alt="Logo Agropartes"/>
+                <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1698938277/AGROPARTES_crc4ir.png" alt="Logo Agropartes" className="agropar"/>
             </div>
             <div className="box">
                 <h2>SIGUENOS</h2>
@@ -27,7 +29,12 @@ export const Footer = () => {
                     <img src={whatsapp}  alt="whatsapp" className="fa fa-whatsapp" />
                 </div>
             </div>
-        </footer>
+            </footer>
+            <div className="footer-bottom">
+                <small>Copyright &copy; 2023 "AGROPARTES C.A". Todos los Derechos Reservados - Diseñado por CJCRR</small>
+            </div>
+        </div>
+        
     );
 }
 

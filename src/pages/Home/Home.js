@@ -33,8 +33,8 @@ const Home = () => {
       </div>
       <div className="servicios-1">
         
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 container servicios-2">
-        <div className="item-hints col">
+      <div className=" container servicios-2">
+        <div className="item-hints ">
           <div className="hint" data-position="4">
             <span className="hint-radius"></span>
             <span className="hint-dot"><Icon icon="iconoir:delivery-truck" /></span>
@@ -44,7 +44,7 @@ const Home = () => {
           </div>
         </div>
         
-        <div className="item-hints col">
+        <div className="item-hints ">
           <div className="hint" data-position="4">
             <span className="hint-radius"></span>
             <span className="hint-dot"><Icon icon="fluent:wallet-credit-card-20-regular" className="iconServicios" /></span>
@@ -56,7 +56,7 @@ const Home = () => {
         
         
         
-        <div className="item-hints col">
+        <div className="item-hints ">
           <div className="hint" data-position="4">
             <span className="hint-radius"></span>
             <span className="hint-dot"><Icon icon="lucide:package-check" /></span>
@@ -66,7 +66,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="item-hints col">
+        <div className="item-hints ">
           <div className="hint" data-position="4">
             <span className="hint-radius"></span>
             <span className="hint-dot"><Icon icon="lucide:package-search" /></span>

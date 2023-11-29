@@ -28,6 +28,7 @@
                 margin-left: 0px;
             }
             h3 {
+                margin-left: 10px;
                 color: $color-principal3;
                 font-size: 30px;
             }
@@ -139,6 +140,7 @@
                 pointer-events: none;
                 @include hover;
                 p {
+                    width: 180px;
                     font-size: 20px;
                     background-color: black;
                     border-radius: 10px;

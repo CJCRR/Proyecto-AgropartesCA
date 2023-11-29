@@ -1,11 +1,14 @@
-
+*{
+    border: 0.5px solid red;
+}
 .search {
     display: flex;
     flex-direction: row;
     text-align: center;
+    justify-content: center;
     div {
         .products__path{
-            width: 60vw;
+            width: 32vw;
             margin: 1em auto;
             font-family: $numbers;
             font-size: 20px;
@@ -35,18 +38,19 @@
     }
 }
 
-
+.productGeneral {
+    
+}
 .products {
     gap: 1rem;
     display: flex;
     justify-content: center;
-    max-width: 100%;
     --color: rgba(114, 114, 114, 0.3);
     background-color: #191a1a;
     background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
         linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
     background-size: 55px 55px;
-    
+
 }
 
 //card
@@ -61,6 +65,7 @@
         height: 100%;
         float:left;
         margin-bottom: 10px;
+        margin-top: 10px;
         .card-img-top {
             background-color: #ff6600;
             height: 100%;

@@ -21,7 +21,7 @@ const ItemList = ({ products, category }) => {
 
 
   return (
-    <>
+    <div className="productGeneral">
       <Header showAs="Shadow" />
       <div className="search">
         <div>
@@ -35,7 +35,7 @@ const ItemList = ({ products, category }) => {
         </div>
       </div>
 
-      <div className="container products row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2 ">
+      <div className="products row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
         {products &&
           products.map((product) => {
             return <Item key={product.id} product={product} />;
@@ -43,7 +43,7 @@ const ItemList = ({ products, category }) => {
       </div>
       <Footer />
 
-    </>
+    </div>
   );
 
 };

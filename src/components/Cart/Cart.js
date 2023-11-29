@@ -25,7 +25,7 @@ const Cart = () => {
         {items.length === 0 ? (
           <div className="cart__empty">
             <h3 className="empty">Tu carrito esta vacio</h3>
-            <Link to="/shop" className="cart__go" onClick={handleClose}>
+            <Link to="/Productos" className="cart__go" onClick={handleClose}>
               Volver a la tienda
             </Link>
           </div>

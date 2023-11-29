@@ -51,10 +51,9 @@ const Item = ({ product, showAs }) => {
           </div>
 
           <div className="card__description">{product.description}</div>
+          <div className="card__description">Stock:{product.stock}</div>
           <ItemCounter counter={itemCounter} setCounter={setItemCounter} />
-          <button className="card__button" onClick={handleOnAdd}>
-            Agregar
-          </button>
+          <button className="card__button" onClick={handleOnAdd}>Agregar</button>
         </div>
       </div>
     );
@@ -90,19 +89,21 @@ const Item = ({ product, showAs }) => {
   }
   return (
     <>
-      <Link to={`/item/detail/${product.id}`}>
-        <div className="card h-100">
+      
+        <div className="card cardContenedor">
+          <Link to={`/item/detail/${product.id}`} className="card">
           <img className="card-img-top" src={product.image} alt={product.title} />
           <div className="card-info">
             <h3 className="text-title">{product.title}</h3>
           </div>
+          </Link>
           <div className="card-footer">
             <span className="text-title precio">${product.price}</span>
-            <p classNames="text-title precio">Stock:{product.stock}</p>
+            <p classNames="text-title precio">{product.category}</p>
             <button class="productoAgregar" onClick={handleOnAdd}> <img className="svg-icon" src={shopping_bag} /> </button>
           </div>
         </div>
-      </Link>
+        
     </>
   );
 };

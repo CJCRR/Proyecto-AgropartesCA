@@ -3,10 +3,11 @@ import { Link, NavLink } from "react-router-dom";
 import instagram from "../../instagram.svg";
 import whatsapp from "../../whatsapp.svg";
 
+//<a href="https://www.instagram.com/agropartess/" target="_blank"><img src={instagram}   alt="instagram" className="fa fa-instagram"/></a>
+  //                  <img src={whatsapp}  alt="whatsapp" className="fa fa-whatsapp" />
 
 
-
-export const Footer = () => {
+const Footer = () => {
     return(
         <div>
             <footer className="pie-pagina">
@@ -23,10 +24,11 @@ export const Footer = () => {
                 <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1698938277/AGROPARTES_crc4ir.png" alt="Logo Agropartes" className="agropar"/>
             </div>
             <div className="box">
-                <h2>SIGUENOS</h2>
-                <div className="red-social">
-                    <a href="https://www.instagram.com/agropartess/" target="_blank"><img src={instagram}   alt="instagram" className="fa fa-instagram"/></a>
-                    <img src={whatsapp}  alt="whatsapp" className="fa fa-whatsapp" />
+                <h2 className="linkFooter"><NavLink to="/TerminosYCondiciones" className="nav__link">MAS INFORMACION</NavLink></h2>
+                <div className="nav flex-column">
+                    <a className="linkFooter"><NavLink to="/TerminosYCondiciones" className="nav__link">TERMINOS Y CONDICIONES</NavLink></a>
+                    <a className="linkFooter"><NavLink to="/TerminosYCondiciones/Envios" className="nav__link">ENVIOS</NavLink></a>
+                    <a className="linkFooter"><NavLink to="/TerminosYCondiciones/AvisoDePrivacidad" className="nav__link">AVISO DE PRIVACIDAD</NavLink></a>
                 </div>
             </div>
             </footer>

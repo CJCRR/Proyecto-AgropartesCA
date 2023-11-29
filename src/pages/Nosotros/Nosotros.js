@@ -44,6 +44,17 @@ const Nosotros = () => {
                 <a href="#" class="col-sm-5 col-md-2">
                     <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1698938280/LOGO_ENCAVA_pjtjoo.png" alt="" class=""/>
                 </a>
+                <a href="#" class="col-sm-5 col-md-2">
+                    <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1698938280/Isuzu-logo-1991-3840x2160_dbad1e.png" alt="" class=""/>
+                </a>
+                <a href="#" class="col-sm-5 col-md-2">
+                    <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1701092145/cummins-PhotoRoom.png-PhotoRoom_1_m3omcb.png" alt="" class=""/>
+                </a>
+                <a href="#" class="col-sm-5 col-md-2">
+                    <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1701101739/pngwing.com_m0yumu.png" alt="" class=""/>
+                </a>
+                
+                
             </div>
         </div>
       </section>

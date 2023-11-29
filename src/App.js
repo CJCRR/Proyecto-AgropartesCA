@@ -6,9 +6,13 @@ import CartState from "./context/CartState";
 import Nosotros from "./pages/Nosotros/Nosotros";
 import Contacto from "./pages/Contacto/Contacto";
 import Checkout from "./pages/Checkout/Checkout";
+import TerminosYCondiciones from "./pages/TerminosYCondiciones/TerminosYCondiciones";
+import Envios from "./pages/TerminosYCondiciones/Envios";
+import AvisoDePrivacidad from "./pages/TerminosYCondiciones/AvisoDePrivacidad";
 import Home from "./pages/Home/Home";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
+
 
 
 
@@ -35,6 +39,12 @@ function App() {
             <Route path="/Nosotros" element={<Nosotros />} />
 
             <Route path="/Contacto" element={<Contacto />} />
+            
+            <Route path="/TerminosYCondiciones" element={<TerminosYCondiciones />} />
+
+            <Route path="/TerminosYCondiciones/Envios" element={<Envios />} />
+
+            <Route path="/TerminosYCondiciones/AvisoDePrivacidad" element={<AvisoDePrivacidad />} />
 
             <Route
               path="*"

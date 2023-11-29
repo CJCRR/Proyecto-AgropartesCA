@@ -49,7 +49,7 @@ const Home = () => {
             <span className="hint-radius"></span>
             <span className="hint-dot"><Icon icon="fluent:wallet-credit-card-20-regular" className="iconServicios" /></span>
             <div className="hint-content do--split-children">
-              <p>TODOS LOS MEDIOS DE PAGO</p>
+              <p>MEDIOS DE PAGO</p>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@ const Home = () => {
             <span className="hint-radius"></span>
             <span className="hint-dot"><Icon icon="lucide:package-check" /></span>
             <div className="hint-content do--split-children">
-              <p>PRODUCTO DE CALIDAD</p>
+              <p>PRODUCTOS DE CALIDAD</p>
             </div>
           </div>
         </div>

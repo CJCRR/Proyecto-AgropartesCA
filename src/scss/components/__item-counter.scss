@@ -1,15 +1,19 @@
 .ItemCounter{
+    margin-bottom: 5px;
     display: flex;
     align-items: center;
     gap: 1em;
 
     .counter__btn{
-        padding: .5em 1em;
+        padding: .4em 1em;
         &--cart{
-            padding: .2em .5em;
+            padding: .1em .3em;
+            border-radius: 20px;
         }
     }
     .counter__results{
         font-family: $numbers;
     }
 }
+
+

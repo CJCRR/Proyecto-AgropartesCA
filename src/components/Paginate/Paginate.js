@@ -1,6 +1,25 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
+const LEFT_PAGE = 'LEFT';
+const RIGHT_PAGE = 'RIGHT';
+
+/**
+ * Helper method for creating a range of numbers
+ * range(1, 5) => [1, 2, 3, 4, 5]
+ */
+const range = (from, to, step = 1) => {
+  let i = from;
+  const range = [];
+
+  while (i <= to) {
+    range.push(i);
+    i += step;
+  }
+
+  return range;
+}
+
 class Pagination extends Component {
   constructor(props) {
     super(props);

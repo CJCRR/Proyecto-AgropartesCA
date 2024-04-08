@@ -6,7 +6,7 @@ import {
   getProductsByCategory,
 } from "../../utils/firebaseFetching";
 import Loader from "../Loader/Loader";
-import Pagination from '../components/Paginate/Paginate';
+import Pagination from '../Paginate/Paginate';
 
 const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);

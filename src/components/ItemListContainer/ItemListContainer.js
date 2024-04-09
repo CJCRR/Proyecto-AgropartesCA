@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
+
 import {
   getAllProducts,
   getProductsByCategory,
 } from "../../utils/firebaseFetching";
 import Loader from "../Loader/Loader";
-import Pagination from '../Paginate/Paginate';
 
 const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);

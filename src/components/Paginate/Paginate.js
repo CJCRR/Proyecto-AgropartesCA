@@ -1,25 +1,11 @@
-import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
-
-const LEFT_PAGE = 'LEFT';
-const RIGHT_PAGE = 'RIGHT';
-
-const range = (from, to, step = 1) => {
-  let i = from;
-  const range = [];
-
-  while (i <= to) {
-    range.push(i);
-    i += step;
-  }
-  return range;
-}
+import React, { Component } from 'react';
 
 class Pagination extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPage: 1
+      currentPage: 1,
+      totalPages: Math.ceil(this.props.totalItems / this.props.itemsPerPage)
     };
   }
 
@@ -28,21 +14,43 @@ class Pagination extends Component {
     this.props.paginate(page);
   };
 
+  handlePreviousPage = () => {
+    const { currentPage } = this.state;
+    if (currentPage > 1) {
+      this.handlePageChange(currentPage - 1);
+    }
+  };
+
+  handleNextPage = () => {
+    const { currentPage, totalPages } = this.state;
+    if (currentPage < totalPages) {
+      this.handlePageChange(currentPage + 1);
+    }
+  };
+
   render() {
     const { itemsPerPage, totalItems } = this.props;
     const totalPages = Math.ceil(totalItems / itemsPerPage);
 
+    this.state.totalPages = totalPages;
+
     return (
       <div className="pagination">
-        {Array.from({ length: totalPages }, (_, i) => (
-          <button
-            key={i}
-            onClick={() => this.handlePageChange(i + 1)}
-            className={this.state.currentPage === i + 1? "active" : ""}
-          >
-            {i + 1}
-          </button>
-        ))}
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" aria-label="Previous" onClick={this.handlePreviousPage}>
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          {Array.from({ length: totalPages }, (_, i) => (
+            <li class="page-item" key={i} onClick={() => this.handlePageChange(i + 1)} className={this.state.currentPage === i + 1? "active" : ""}><a class="page-link" >{i + 1}</a></li>
+          ))}
+          <li class="page-item">
+            <a class="page-link" aria-label="Next" onClick={this.handleNextPage}>
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
       </div>
     );
   }

@@ -35,18 +35,18 @@ class Pagination extends Component {
     this.state.totalPages = totalPages;
 
     return (
-      <div className="pagination">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" aria-label="Previous" onClick={this.handlePreviousPage}>
+      <div className="paginateBox">
+        <ul className="pagination">
+          <li className="page-item">
+            <a className="page-link" aria-label="Previous" onClick={this.handlePreviousPage}>
               <span aria-hidden="true">&laquo;</span>
             </a>
           </li>
           {Array.from({ length: totalPages }, (_, i) => (
-            <li class="page-item" key={i} onClick={() => this.handlePageChange(i + 1)} className={this.state.currentPage === i + 1? "active" : ""}><a class="page-link" >{i + 1}</a></li>
+            <li className={this.state.currentPage === i + 1? "active" : "page-item"} key={i} onClick={() => this.handlePageChange(i + 1)} ><a className="page-link" >{i + 1}</a></li>
           ))}
-          <li class="page-item">
-            <a class="page-link" aria-label="Next" onClick={this.handleNextPage}>
+          <li className="page-item">
+            <a className="page-link" aria-label="Next" onClick={this.handleNextPage}>
               <span aria-hidden="true">&raquo;</span>
             </a>
           </li>

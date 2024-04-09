@@ -53,7 +53,17 @@
 .paginate {
     display: flex;
     justify-content: center;
+}
 
+.paginateBox {
+    .pagination {
+        .page-item {
+            color: black;
+            .page-link {
+                color: black;
+            }
+        }
+    }
 }
 
 //card

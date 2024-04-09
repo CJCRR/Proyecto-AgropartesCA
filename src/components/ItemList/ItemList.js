@@ -2,9 +2,12 @@ import React from "react";
 import Item from "../Item/Item";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import Pagination from "../Paginate/Paginate";
 
-const ItemList = ({ products, category }) => {
-
+const ItemList = ({ products,
+  itemsPerPage,
+  totalItems,
+  paginate, }) => {
   
 
   document.addEventListener("keyup", e => {
@@ -34,13 +37,24 @@ const ItemList = ({ products, category }) => {
           </svg>
         </div>
       </div>
-
-      <div className="products row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-        {products &&
-          products.map((product) => {
-            return <Item key={product.id} product={product} />;
-          })}
+      <div className="itemsContainer">
+        <div className="products row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+          {products &&
+            products.map((product) => {
+              return <Item key={product.id} product={product} />;
+            })}
+        </div>
+        <div className="paginate">
+          <Pagination
+            itemsPerPage={itemsPerPage}
+            totalItems={totalItems}
+            paginate={paginate}
+          />
+        </div>
+        
       </div>
+      
+      
       <Footer />
 
     </div>

@@ -11,6 +11,8 @@ import Pagination from '../Paginate/Paginate';
 const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(12);
   const { category } = useParams();
 
   const fetchProducts = async () => {
@@ -24,11 +26,32 @@ const ItemListContainer = () => {
     setItems(products);
     setLoading(false);
   };
+
   useEffect(() => {
-    category ? fetchProductsByCategory(category) : fetchProducts();
+    category? fetchProductsByCategory(category) : fetchProducts();
   }, [category]);
 
-  return <>{loading ? <Loader /> : <ItemList products={items} />}</>;
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
+
+  return (
+    <>
+      {loading? (
+        <Loader />
+      ) : (
+        <>
+          
+          <ItemList
+          products={currentItems}
+          itemsPerPage={itemsPerPage}
+          totalItems={items.length}
+          paginate={setCurrentPage}
+        />
+        </>
+      )}
+    </>
+  );
 };
 
 export default ItemListContainer;

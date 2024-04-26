@@ -14,6 +14,7 @@ const CheckoutForm = ({ setId }) => {
 
   const handleSubmit = async (values, resetForm) => {
     setLoading(true);
+    const orderTotal = items.reduce((total, item) => total + item.price * item.quantity, 0);
     const order = {
       purcharse_data: {
         firsName: values.firstName,
@@ -22,14 +23,28 @@ const CheckoutForm = ({ setId }) => {
       },
       products: items,
       date: serverTimestamp(),
+      total: orderTotal,
     };
     const orderId = await addNewOrder(order);
     setId(orderId);
     resetForm({ values: "" });
     setLoading(false);
+    redirectToWhatsApp(values, order);
   };
-  const emailRegEx =
-    /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
+
+  const redirectToWhatsApp = (values, order) => {
+    const { firstName, lastName, email } = values;
+    const { products, total } = order;
+  
+    const productList = products.map((product) => `- ${product.title} (Cantidad: ${product.quantity}, Precio: $${product.price})\n`).join("");
+  
+    const message = `Hola, acabo de realizar un pedido,\nNombre: ${firstName} ${lastName}\nCorreo electrónico: ${email}\nProductos:\n${productList}\nTotal: $${total}\n`;
+    const whatsappUrl = `https://wa.me/+584148949391?text=${encodeURIComponent(message)}`;
+  
+    window.open(whatsappUrl, "_blank");
+  };
+
+  const emailRegEx = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
 
   const validate = Yup.object({
     firstName: Yup.string()
@@ -45,6 +60,7 @@ const CheckoutForm = ({ setId }) => {
       .oneOf([Yup.ref("email"), null], "Correo electrónico debe coincidir")
       .required("Se requiere confirmar el correo electrónico"),
   });
+
   return (
     <>
       <Formik

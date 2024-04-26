@@ -22,9 +22,6 @@ const Checkout = () => {
     subTotal += itemSubTotal;
   };
 
-  const mainLogo =
-    "https://res.cloudinary.com/dtpfo51rx/image/upload/v1669562382/swoosh/logos/logo_oqhbhu.png";
-
   if (items.length === 0) {
     navigateModal
       .fire({
@@ -35,7 +32,7 @@ const Checkout = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          navigate("/shop");
+          navigate("/");
         }
       });
   } else if (orderId) {

@@ -26,19 +26,19 @@ const CheckoutForm = ({ setId }) => {
       total: orderTotal,
     };
     const orderId = await addNewOrder(order);
-    setId(orderId);
-    resetForm({ values: "" });
-    setLoading(false);
-    redirectToWhatsApp(values, order);
+      setId(orderId);
+      resetForm({ values: "" });
+      setLoading(false);
+      redirectToWhatsApp(values, order, orderId);     
   };
 
-  const redirectToWhatsApp = (values, order) => {
+  const redirectToWhatsApp = (values, order, orderId) => {
     const { firstName, lastName, email } = values;
     const { products, total } = order;
   
     const productList = products.map((product) => `- ${product.title} (Cantidad: ${product.quantity}, Precio: $${product.price})\n`).join("");
   
-    const message = `Hola, acabo de realizar un pedido,\nNombre: ${firstName} ${lastName}\nCorreo electrónico: ${email}\nProductos:\n${productList}\nTotal: $${total}\n`;
+    const message = `Hola, acabo de realizar un pedido, \nNro.orden: ${orderId}\nNombre: ${firstName} ${lastName}\nCorreo electrónico: ${email}\nProductos:\n${productList}\nTotal: $${total}\n`;
     const whatsappUrl = `https://wa.me/+584148949391?text=${encodeURIComponent(message)}`;
   
     window.open(whatsappUrl, "_blank");

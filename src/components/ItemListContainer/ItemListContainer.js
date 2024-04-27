@@ -11,29 +11,29 @@ import Loader from "../Loader/Loader";
 const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(12);
   const { category } = useParams();
 
+   // Función para obtener todos los productos
   const fetchProducts = async () => {
     const products = await getAllProducts();
     setItems(products);
     setLoading(false);
   };
 
+  // Función para obtener productos por categoría
   const fetchProductsByCategory = async (cat) => {
     const products = await getProductsByCategory(cat);
     setItems(products);
     setLoading(false);
   };
 
+  // Efecto para obtener los productos según la categoría
   useEffect(() => {
     category? fetchProductsByCategory(category) : fetchProducts();
   }, [category]);
 
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
+  // Copia del array de items para evitar mutaciones
+  const currentItems = items.slice();
 
   return (
     <>
@@ -44,9 +44,7 @@ const ItemListContainer = () => {
           
           <ItemList
           products={currentItems}
-          itemsPerPage={itemsPerPage}
           totalItems={items.length}
-          paginate={setCurrentPage}
         />
         </>
       )}

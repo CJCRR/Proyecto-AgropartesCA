@@ -23,7 +23,7 @@ const Contacto = () => {
                     <h2>SIGUENOS</h2>
                     <div className="red-social2">
                     <a href="https://www.instagram.com/agropartess/" target="_blank"><img src={instagram}   alt="instagram" className="fa fa-instagram"/></a>
-                        <img src={whatsapp}  alt="whatsapp" className="fa fa-whatsapp" />
+                        <a href="https://wa.me/+584148949391?text="><img src={whatsapp}  alt="whatsapp" className="fa fa-whatsapp" /></a>
                     </div>
                 </div>
                 <div className="ratio ratio-1x1">

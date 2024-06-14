@@ -68,3 +68,5 @@ export const addNewOrder = async (order) => {
   const orderID = response.id;
   return orderID;
 };
+
+export { productsCollection };

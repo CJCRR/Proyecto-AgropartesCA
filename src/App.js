@@ -10,6 +10,7 @@ import TerminosYCondiciones from "./pages/TerminosYCondiciones/TerminosYCondicio
 import Envios from "./pages/TerminosYCondiciones/Envios";
 import AvisoDePrivacidad from "./pages/TerminosYCondiciones/AvisoDePrivacidad";
 import Home from "./pages/Home/Home";
+import AddProducts from "./pages/AddProducts/AddProducts";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
 
@@ -45,6 +46,8 @@ function App() {
             <Route path="/TerminosYCondiciones/Envios" element={<Envios />} />
 
             <Route path="/TerminosYCondiciones/AvisoDePrivacidad" element={<AvisoDePrivacidad />} />
+
+            <Route path="/AddProducts" element={<AddProducts /> } />
 
             <Route
               path="*"

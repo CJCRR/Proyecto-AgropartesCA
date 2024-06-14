@@ -9,10 +9,16 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const { isOpen, closeCart, items } = useCartContext();
 
+  let tax = 0;
+  let total = 0;
   let subTotal = 0;
   const handleCalcSubTotal = (qty, price) => {
-    let itemSubTotal = qty * price;
+    let itemTotal = qty * price;
+    let itemTax = itemTotal * 0.05;
+    let itemSubTotal = qty * price + itemTax;
     subTotal += itemSubTotal;
+    total += itemTotal;
+    tax += itemTax;
   };
   const handleClose = () => {
     closeCart();
@@ -42,6 +48,14 @@ const Cart = () => {
             </div>
             <hr className="divisor"/>
             
+            <div className="flex-row cart__total">
+              <h4>SubTotal</h4>
+              <span>${total}</span>
+            </div>
+            <div className="flex-row cart__total">
+              <h4>Tax%</h4>
+              <span>${tax}</span>
+            </div>
             <div className="flex-row cart__total">
               <h4>Total</h4>
               <span>${subTotal}</span>

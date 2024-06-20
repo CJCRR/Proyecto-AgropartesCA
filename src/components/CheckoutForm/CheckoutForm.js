@@ -20,6 +20,7 @@ const CheckoutForm = ({ setId }) => {
         firsName: values.firstName,
         lastName: values.lastName,
         email: values.email.toLowerCase(),
+        dni: values.dni,
       },
       products: items,
       date: serverTimestamp(),
@@ -33,12 +34,12 @@ const CheckoutForm = ({ setId }) => {
   };
 
   const redirectToWhatsApp = (values, order, orderId) => {
-    const { firstName, lastName, email } = values;
+    const { firstName, lastName, email, dni } = values;
     const { products, total } = order;
   
     const productList = products.map((product) => `- ${product.title} (Cantidad: ${product.quantity}, Precio: $${product.price})\n`).join("");
   
-    const message = `Hola, acabo de realizar un pedido, \nNro.orden: ${orderId}\nNombre: ${firstName} ${lastName}\nCorreo electrónico: ${email}\nProductos:\n${productList}\nTotal: $${total}\n`;
+    const message = `Hola, acabo de realizar un pedido, \nNro.orden: ${orderId}\nNombre: ${firstName} ${lastName}\nCorreo electrónico: ${email}\nCedula: ${dni}\nProductos:\n${productList}\nTotal: $${total}\n`;
     const whatsappUrl = `https://wa.me/+584148949391?text=${encodeURIComponent(message)}`;
   
     window.open(whatsappUrl, "_blank");
@@ -56,9 +57,9 @@ const CheckoutForm = ({ setId }) => {
     email: Yup.string()
       .email("El correo electrónico es invalido", emailRegEx)
       .required("Correo electronico es requerido"),
-    confirmEmail: Yup.string()
-      .oneOf([Yup.ref("email"), null], "Correo electrónico debe coincidir")
-      .required("Se requiere confirmar el correo electrónico"),
+    dni: Yup.string()
+      .oneOf([Yup.ref("dni"), null], "Verifique su cedula")
+      .required("Se requiere su documento de identidad"),
   });
 
   return (
@@ -68,7 +69,7 @@ const CheckoutForm = ({ setId }) => {
           firstName: "",
           lastName: "",
           email: "",
-          confirmEmail: "",
+          dni: "",
         }}
         validationSchema={validate}
         onSubmit={(values, { resetForm }) => {
@@ -92,7 +93,7 @@ const CheckoutForm = ({ setId }) => {
               />
             </div>
             <TextField label="Email" name="email" type="text" />
-            <TextField label="Confirm Email" name="confirmEmail" type="text" />
+            <TextField label="Cedula" name="dni" type="text" />
             <button type="submit" className="form__submit">
               {loading ? <ButtonLoader /> : "Completar compra"}
             </button>

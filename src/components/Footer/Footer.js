@@ -1,40 +1,54 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import instagram from "../../instagram.svg";
-import whatsapp from "../../whatsapp.svg";
-
-//<a href="https://www.instagram.com/agropartess/" target="_blank"><img src={instagram}   alt="instagram" className="fa fa-instagram"/></a>
-  //                  <img src={whatsapp}  alt="whatsapp" className="fa fa-whatsapp" />
-
+import { Facebook, Instagram, Linkedin } from 'react-bootstrap-icons';
 
 const Footer = () => {
     return(
-        <div>
-            <footer className="pie-pagina">
-            <div className="box">
-                <h2>SOBRE NOSOTROS</h2>
-                <div className="nav flex-column">
-                    <a className="linkFooter"><Link to="/" className="nav__link">INICIO</Link></a>
-                    <a className="linkFooter"><NavLink to="/Productos" className="nav__link">PRODUCTOS</NavLink></a>
-                    <a className="linkFooter"><NavLink to="/Nosotros" className="nav__link">NOSOTROS</NavLink></a>
-                    <a className="linkFooter"><NavLink to="/contacto" className="nav__link">CONTACTO</NavLink></a>
+                <div class="page-container">
+            <footer class="top">
+                <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1698938277/AGROPARTES_crc4ir.png" alt="Logo Agropartes" className="agropar" />
+                <div class="links">
+                    <div class="links-1">
+                        <h2>Nosotros</h2>
+                        <a><Link to="/" className="nav__link">Inicio</Link></a>
+                        <a><NavLink to="/Nosotros" className="nav__link">Nosotros</NavLink></a>
+                        <a><NavLink to="/contacto" className="nav__link">Contacto</NavLink></a>
+                        <a><NavLink to="/Productos" className="nav__link">Productos</NavLink></a>
+                    </div>
+                    <div class="links-1">
+                        <h2><NavLink to="/TerminosYCondiciones" className="nav__link">Politica</NavLink></h2>
+                        <a><NavLink to="/TerminosYCondiciones" className="nav__link">Terminos y condiciones</NavLink></a>
+                        <a><NavLink to="/TerminosYCondiciones/Envios" className="nav__link">Envios</NavLink></a>
+                        <a><NavLink to="/TerminosYCondiciones/AvisoDePrivacidad" className="nav__link">Aviso De Privacidad</NavLink></a>
+                        <a>Devoluciones y Garantía</a>
+                    </div>
+                    <div class=" links-1 socials-column">
+                        <h2>Social Media</h2>
+                        <p>
+                            Síguenos en las redes sociales para enterarte de las últimas actualizaciones sobre nuestro
+                            progreso.
+                        </p>
+                        <div className="socials">
+                            <Facebook className="social-icon" />
+                            <Instagram className="social-icon" />
+                            <Linkedin className="social-icon" />
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div className="box">
-                <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1698938277/AGROPARTES_crc4ir.png" alt="Logo Agropartes" className="agropar"/>
-            </div>
-            <div className="box">
-                <h2 className="linkFooter"><NavLink to="/TerminosYCondiciones" className="nav__link">MAS INFORMACION</NavLink></h2>
-                <div className="nav flex-column">
-                    <a className="linkFooter"><NavLink to="/TerminosYCondiciones" className="nav__link">TERMINOS Y CONDICIONES</NavLink></a>
-                    <a className="linkFooter"><NavLink to="/TerminosYCondiciones/Envios" className="nav__link">ENVIOS</NavLink></a>
-                    <a className="linkFooter"><NavLink to="/TerminosYCondiciones/AvisoDePrivacidad" className="nav__link">AVISO DE PRIVACIDAD</NavLink></a>
-                </div>
-            </div>
             </footer>
-            <div className="footer-bottom">
-                <small>Copyright &copy; 2023 "AGROPARTES C.A". Todos los Derechos Reservados - Diseñado por CJCRR</small>
-            </div>
+            <footer class="bottom">
+                <div class="legal">
+                    <span> © 2024 Agropartes C.A, Creador del sitio CJCRR. </span>
+                    <a> Ayuda </a>
+                    <a> Preguntas Frecuentes </a>
+                    <a><NavLink to="/contacto" className="nav__link">Contacto</NavLink></a>
+                </div>
+                <div class="links">
+                    <Facebook className="social-icon" />
+                    <Instagram className="social-icon" />
+                    <Linkedin className="social-icon" />
+                </div>
+            </footer>
         </div>
         
     );

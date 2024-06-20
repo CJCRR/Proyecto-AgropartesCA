@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import Item from "../Item/Item";
+import { Link, NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { Row, Col, Form, Offcanvas, Accordion } from 'react-bootstrap';
+import { CaretRight, ChevronRight, FilterLeft, Search } from 'react-bootstrap-icons';
+
 
 const ItemList = ({ products = [] }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -26,6 +31,8 @@ const ItemList = ({ products = [] }) => {
   // Calcular el número total de páginas
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
+  const navigate = useNavigate();
+
   // Obtener los índices de los productos a mostrar en la página actual
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -47,54 +54,316 @@ const ItemList = ({ products = [] }) => {
       );
     }
 
+    
+
     return pageNumbers;
   };
+
+  const handleSubCategoryClick = (category, subCategory) => {
+    // Redirige a la ruta de los productos de la subcategoría
+    navigate(`/productos/category/${category}/sub/${subCategory}`);
+  };
+  
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  const handleSidebar = () => setShowSidebar(!showSidebar);
 
   return (
     <div className="productGeneral">
       <Header showAs="Shadow" />
+      <header class="container">
+        <h1>Todos los Productos</h1>
+        <ul class="breadcrumb">
+          <a ><li><Link to="/" className="nav__link nav-link">Inicio</Link></li></a>
+          <ChevronRight />
+          <a href="#" disabled><li>Productos</li></a>
+        </ul>
+      </header>
       <div className="search">
         <div>
-          <h1 className="products__path">TODOS LOS PRODUCTOS</h1>
+          <button onClick={handleSidebar} className="filter-btn"><FilterLeft className="filterIcon" /></button>
         </div>
-        <div className="container-input">
-          <input
-            id="buscador"
-            type="text"
-            placeholder="Search"
-            name="text"
-            className="input me-2"
-            value={searchTerm}
-            onChange={handleSearch}
-          />
-          <svg fill="#000000" width="20px" height="20px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
-            <path d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z" fillRule="evenodd"></path>
-          </svg>
+        <div className="container-input products__path">
+          <Search className="lupa" />
+          <input id="buscador" class="input me-2" name="text" placeholder="Search" type="text" value={searchTerm} onChange={handleSearch} />
         </div>
       </div>
-      <div className="itemsContainer">
-        <div className="products row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-          {currentItems.map((product) => (
-            <Item key={product.id} product={product} />
-          ))}
-        </div>
-        <div className="pagination">
-          <button
-            className="page-link"
-            disabled={currentPage === 1}
-            onClick={() => handlePageChange(currentPage - 1)}
-          >
-            Anterior
-          </button>
-          {renderPageNumbers()}
-          <button
-            className="page-link"
-            disabled={currentPage === totalPages}
-            onClick={() => handlePageChange(currentPage + 1)}
-          >
-            Siguiente
-          </button>
-        </div>
+      <div className="itemsContainer container">
+        <Row>
+          <Col md={3} className="container">
+            <div className=" container sidebar d-none d-md-block">
+              <h1 className="products__path">Filtros</h1>
+              <Form>
+                <Accordion>
+                  <Accordion.Item eventKey="0">
+                    <Accordion.Header>
+                      <Form.Label><NavLink to="/Productos" className="nav__link nav-link">TODOS</NavLink></Form.Label>
+                    </Accordion.Header>
+                  </Accordion.Item>
+                </Accordion>
+                <Accordion>
+                  <Accordion.Item eventKey="1">
+                    <Accordion.Header>
+                      <Form.Label>FILTROS</Form.Label>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <a><li>Aire</li></a>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <a><li>Combustible</li></a>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <a><li>Aceite</li></a>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <a><li>Separador</li></a>
+                      </ul>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                </Accordion>
+                <Accordion>
+                  <Accordion.Item eventKey="2">
+                    <Accordion.Header>
+                      <Form.Label>ISUZU</Form.Label>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('ISUZU', 'Frenos')} >Frenos</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('ISUZU', 'Inyeccion')} >Inyección</li>
+                      </ul>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                </Accordion>
+                <Accordion>
+                  <Accordion.Item eventKey="3">
+                    <Accordion.Header>
+                      <Form.Label>TOYOTA</Form.Label>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <a><li>Motor</li></a>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <a><li>Motor</li></a>
+                      </ul>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                </Accordion>
+                <Accordion>
+                  <Accordion.Item eventKey="4">
+                    <Accordion.Header>
+                      <Form.Label>MITSUBISHI</Form.Label>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <a><li>Motor</li></a>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <a><li>Motor</li></a>
+                      </ul>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                </Accordion>
+                <Accordion>
+                  <Accordion.Item eventKey="5">
+                    <Accordion.Header>
+                      <Form.Label>CUMMINS</Form.Label>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('CUMMINS', 'Motor')} >Motor</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <a><li>Motor</li></a>
+                      </ul>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                </Accordion>
+                <Accordion>
+                  <Accordion.Item eventKey="6">
+                    <Accordion.Header>
+                      <Form.Label>HINO</Form.Label>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <a><li>Motor</li></a>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <a><li>Motor</li></a>
+                      </ul>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                </Accordion>
+              </Form>
+            </div>
+          </Col>
+          <Col md={9}>
+            <div className="products row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+              {currentItems.map((product) => (
+                <Item key={product.id} product={product} />
+              ))}
+            </div>
+            <div className="pagination">
+              <button
+                className="page-link"
+                disabled={currentPage === 1}
+                onClick={() => handlePageChange(currentPage - 1)}
+              >
+                Anterior
+              </button>
+              {renderPageNumbers()}
+              <button
+                className="page-link"
+                disabled={currentPage === totalPages}
+                onClick={() => handlePageChange(currentPage + 1)}
+              >
+                Siguiente
+              </button>
+            </div>
+          </Col>
+        </Row>
+        <Offcanvas show={showSidebar} onHide={handleSidebar} placement="start">
+
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title>Filtros</Offcanvas.Title>
+          </Offcanvas.Header>
+          <Form>
+            <Accordion>
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>
+                  <Form.Label><NavLink to="/Poductos" className="nav__link nav-link">TODOS</NavLink></Form.Label>
+                </Accordion.Header>
+              </Accordion.Item>
+            </Accordion>
+            <Accordion>
+              <Accordion.Item eventKey="1">
+                <Accordion.Header>
+                  <Form.Label>FILTROS</Form.Label>
+                </Accordion.Header>
+                <Accordion.Body>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <a><li>Aire</li></a>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <a><li>Combustible</li></a>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <a><li>Aceite</li></a>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <a><li>Separador</li></a>
+                  </ul>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+            <Accordion>
+              <Accordion.Item eventKey="2">
+                <Accordion.Header>
+                  <Form.Label>ISUZU</Form.Label>
+                </Accordion.Header>
+                <Accordion.Body>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <a><li>Motor</li></a>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <a><li>Motor</li></a>
+                  </ul>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+            <Accordion>
+              <Accordion.Item eventKey="3">
+                <Accordion.Header>
+                  <Form.Label>TOYOTA</Form.Label>
+                </Accordion.Header>
+                <Accordion.Body>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <a><li>Motor</li></a>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <a><li>Motor</li></a>
+                  </ul>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+            <Accordion>
+              <Accordion.Item eventKey="4">
+                <Accordion.Header>
+                  <Form.Label>MITSUBISHI</Form.Label>
+                </Accordion.Header>
+                <Accordion.Body>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <a><li>Motor</li></a>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <a><li>Motor</li></a>
+                  </ul>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+            <Accordion>
+              <Accordion.Item eventKey="5">
+                <Accordion.Header>
+                  <Form.Label>CUMMINS</Form.Label>
+                </Accordion.Header>
+                <Accordion.Body>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <a><li>Motor</li></a>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <a><li>Motor</li></a>
+                  </ul>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+            <Accordion>
+              <Accordion.Item eventKey="6">
+                <Accordion.Header>
+                  <Form.Label>HINO</Form.Label>
+                </Accordion.Header>
+                <Accordion.Body>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <a><li>Motor</li></a>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <a><li>Motor</li></a>
+                  </ul>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+          </Form>
+        </Offcanvas>
       </div>
       <Footer />
     </div>

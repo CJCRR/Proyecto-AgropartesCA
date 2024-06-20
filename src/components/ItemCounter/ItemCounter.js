@@ -1,42 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import { GoPlus, GoDash } from "react-icons/go";
 import { useCartContext } from "../../context/CartState";
-const ItemCounter = ({
-  counter,
-  setCounter,
-  showAs,
-  productQty,
-  productId,
-}) => {
+
+const ItemCounter = ({ showAs, productQty, productId }) => {
   const { updateCart } = useCartContext();
-  const [cartCounter, setCartCounter] = useState(productQty);
 
   const handleCartAdd = () => {
-    setCartCounter(cartCounter + 1);
-    updateCart(productId, cartCounter + 1);
+    updateCart(productId, productQty + 1);
   };
+
   const handleCartLess = () => {
-    setCartCounter(cartCounter - 1);
-    updateCart(productId, cartCounter - 1);
+    if (productQty > 1) {
+      updateCart(productId, productQty - 1);
+    }
   };
-  const handleLess = () => {
-    counter > 0 && setCounter(counter - 1);
+
+  const handleCheckoutCounterChange = (event) => {
+    const value = parseInt(event.target.value);
+    if (!isNaN(value) && value > 0) {
+      updateCart(productId, value);
+    }
   };
-  const handleAdd = () => {
-    setCounter(counter + 1);
-  };
+
   if (showAs === "Cart") {
     return (
+      
       <div className="ItemCounter ItemCounter--cart">
         <button
           className="counter__btn counter__btn--cart"
           onClick={handleCartLess}
-          disabled={cartCounter === 1 ? true : false}
+          disabled={productQty === 1}
         >
           <GoDash />
         </button>
         <span className="counter__results counter__results--cart">
-          {cartCounter}
+          {productQty}
         </span>
         <button
           className="counter__btn counter__btn--cart"
@@ -47,21 +45,23 @@ const ItemCounter = ({
       </div>
     );
   }
-  return (
-    <div className="ItemCounter">
-      <button
-        className="counter__btn"
-        onClick={handleLess}
-        disabled={counter === 1 ? true : false}
-      >
-        <GoDash />
-      </button>
-      <span className="counter__results">{counter}</span>
-      <button className="counter__btn" onClick={handleAdd}>
-        <GoPlus />
-      </button>
-    </div>
-  );
+
+  if (showAs === "checkoutCounter") {
+    return (
+      <div className="quantity">
+        <input
+          type="number"
+          className="quantity"
+          step="0"
+          value={productQty}
+          onChange={handleCheckoutCounterChange}
+          min="0"
+        />
+      </div>
+    );
+  }
+
+  return null;
 };
 
 export default ItemCounter;

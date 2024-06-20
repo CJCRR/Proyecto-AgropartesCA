@@ -1,5 +1,6 @@
 .addAndUpdateProducts {
     .addAndUpdateProducts-1 {
+        gap: 40px;
         .addAndUpdateProducts-2 {
             h1 {
                 text-align: center;
@@ -12,9 +13,19 @@
 }
 
 .formAddUpdate {
-    div {
+    .boxAdd {
+        display: flex;
+        flex-direction: column;
         input {
             border-radius: 10px;
         }
+    }
+    .buttonUpdate {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .buttonAdd {
+        margin-top: 48px;
+        margin-bottom: 20px;
     }
 }

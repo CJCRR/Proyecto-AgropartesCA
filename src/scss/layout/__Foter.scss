@@ -1,61 +1,126 @@
+.page-container {
+    width: 100%;
+    background: black;
+    padding-top: 60px;
+}
 
 footer {
-    background-color: black;
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 30px;
-    text-align: center;
-    .linkFooter {
-        display: flex;
-        flex-direction: column;
-        margin-top: 10px;
-        @include hover;
-    }
-    .box {
-        img {
-            width: 100%;
-            height: auto;
-        }
-    }
-    .box {
-        h2 {
-            font-size: 30px;
-            color: $color-principal3;
-        }
-    }
-    .red-social {
-        img {
-            width: 50px;
-            font-size: 10px;
-            margin: 20px;
-        }
-    }
-}
-
-.footer-bottom {
-    height: 70px;
     display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    background-color: black;
-    backdrop-filter: blur(10px);
-    small {
-        font-size: 16px;
-        margin: 0 4px;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 0 30px;
+    color: white;
+    img {
+        width: 300px;
+    }
+    .links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        .links-1 {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 30px;
+            h2 {
+                margin: 0;
+                font-size: 16px;
+                font-weight: 400;
+                color: #ebb589;
+            }
+        }
+        .socials-column {
+            .socials {
+                display: flex;
+                gap: 15px;
+                a {
+                    font-size: 24px;
+                    gap: 20px;
+                    text-decoration: none;
+                    color: #ebb589;
+                }
+            }
+        }
     }
 }
 
+footer.top {
+    border-bottom: 2px solid #ebb589;
+    padding-bottom: 20px;
+}
 
-@media only screen and (max-width: 762px) {
-    .pie-pagina {
-        display: block;
-        align-items: center;
-        text-align: center;
-    }
-    .seccion-nosotros {
-        p {
-            width: 95%;
+footer.bottom {
+    padding: 20px 0;
+    justify-content: space-between;
+    .legal {
+        font-size: 12px;
+        a {
+            margin: 0 4px;
+            text-decoration: none;
         }
+        span {
+            margin-right: 10px;
+        }
+    }
+    .links {
+        display: flex;
+        gap: 18px;
+        a {
+            font-size: 24px;
+            text-decoration: none;
+            color:#ebb589;
+        }
+    }
+}
+
+@media (width >=620px) {
+    footer {
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 0;
+    }
+
+}
+
+@media (width < 620px) {
+    footer {
+        flex-direction: column;
+    }
+
+    footer.bottom {
+        gap: 16px;
+        flex-direction: column-reverse;
+    }
+
+}
+
+@media (width < 420px) {
+    footer {
+        text-align: center;
+        align-items: center;
+    }
+
+
+    footer.top .links {
+        grid-template-columns: 1fr;
+    }
+
+    footer.bottom {
+        align-items: center;
+    }
+
+    .legal>span {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 2px;
+    }
+
+    .socials-column :is(h2, p) {
+        display: none;
+    }
+
+    .socials {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
     }
 }

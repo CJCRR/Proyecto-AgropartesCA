@@ -29,9 +29,11 @@ function App() {
             <Route path="/Productos" element={<ItemListContainer />} />
 
             <Route
-              path="/shop/category/:category"
+              path="/productos/category/:category"
               element={<ItemListContainer />}
             />
+
+            <Route path="/productos/category/:category/sub/:subCategory" element={<ItemListContainer />} />
 
             <Route path="/item/detail/:id" element={<ItemDetailContainer />} />
 
@@ -40,14 +42,14 @@ function App() {
             <Route path="/Nosotros" element={<Nosotros />} />
 
             <Route path="/Contacto" element={<Contacto />} />
-            
+
             <Route path="/TerminosYCondiciones" element={<TerminosYCondiciones />} />
 
             <Route path="/TerminosYCondiciones/Envios" element={<Envios />} />
 
             <Route path="/TerminosYCondiciones/AvisoDePrivacidad" element={<AvisoDePrivacidad />} />
 
-            <Route path="/AddProducts" element={<AddProducts /> } />
+            <Route path="/AddProducts" element={<AddProducts />} />
 
             <Route
               path="*"

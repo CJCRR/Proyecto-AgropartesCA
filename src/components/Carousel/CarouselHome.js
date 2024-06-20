@@ -1,89 +1,80 @@
-import React, { useRef, useEffect, useState } from "react";
-import Header from "../../components/Header/Header";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import React, { useEffect, useRef } from 'react';
 
+const CarouselHome = () => {
+  const intervalRef = useRef(null);
 
-const Slider = () => {
-  const slideRef = useRef(null);
-  const [loadingProgress, setLoadingProgress] = useState(0);
+  useEffect(() => {
+    const bannerSwitcher = () => {
+      const next = document.querySelector('.sec-1-input:checked')?.nextElementSibling;
+      if (next && next.classList.contains('sec-1-input')) {
+        next.checked = true;
+      } else {
+        document.querySelector('.sec-1-input').checked = true;
+      }
+    };
 
-  const handleClickNext = () => {
-    let items = slideRef.current.querySelectorAll(".item");
-    slideRef.current.appendChild(items[0]);
-  };
+    const handleControlClick = () => {
+      clearInterval(intervalRef.current);
+      intervalRef.current = setInterval(bannerSwitcher, 5000);
+    };
 
-  const handleClickPrev = () => {
-    let items = slideRef.current.querySelectorAll(".item");
-    slideRef.current.prepend(items[items.length - 1]);
-  };
+    const controls = document.querySelectorAll('nav .controls label');
+    controls.forEach((control) => {
+      control.addEventListener('click', handleControlClick);
+    });
 
-  const data = [
-    {
-      id: 1,
-      imgUrl: "https://i.postimg.cc/PrMGqZwx/pexels-m-venter-1659437.jpg",
-      desc: "Some beautiful roads cannot be discovered without getting loss.",
-      name: "EXPLORE NATURE",
-    },
-    {
-      id: 2,
-      imgUrl:
-        "https://i.postimg.cc/bw6KxhLf/pexels-eberhard-grossgasteiger-1062249.jpg",
-      desc: "Some beautiful roads cannot be discovered without getting loss.",
-      name: "EXPLORE NATURE",
-    },
-    {
-      id: 3,
-      imgUrl:
-        "https://i.postimg.cc/CMkTW9Mb/pexels-eberhard-grossgasteiger-572897.jpg",
-      desc: "Some beautiful roads cannot be discovered without getting loss.",
-      name: "EXPLORE NATURE",
-    },
-    {
-      id: 5,
-      imgUrl: "https://i.postimg.cc/6qdkn4bM/pexels-joyston-judah-933054.jpg",
-      desc: "Some beautiful roads cannot be discovered without getting loss.",
-      name: "EXPLORE NATURE",
-    },
-    {
-      id: 6,
-      imgUrl:
-        "https://i.postimg.cc/RVm59Gqy/pexels-roberto-nickson-2559941.jpg",
-      desc: "Some beautiful roads cannot be discovered without getting loss.",
-      name: "EXPLORE NATURE",
-    },
-  ];
+    intervalRef.current = setInterval(bannerSwitcher, 5000);
+
+    return () => {
+      clearInterval(intervalRef.current);
+      controls.forEach((control) => {
+        control.removeEventListener('click', handleControlClick);
+      });
+    };
+  }, []);
 
   return (
-    <div className="containerr">
-        <Header />
-      <div className="loadbar" style={{ width: `${loadingProgress}%` }}></div>
+    <div className="content-slider">
+            <input type="radio" id="banner1" className="sec-1-input" name="banner" checked/>
+            <input type="radio" id="banner2" className="sec-1-input" name="banner"/>
+            <input type="radio" id="banner3" className="sec-1-input" name="banner"/>
+            <input type="radio" id="banner4" className="sec-1-input" name="banner"/>
+            <div className="slider">
+                <div id="top-banner-1" className="banner">
+                  <div className="banner-inner-wrapper">
+                   
+                    </div>
+                </div>
+                <div id="top-banner-2" className="banner">
+                    <div className="banner-inner-wrapper">
+                    
+                    </div>
+                </div>
+                <div id="top-banner-3" className="banner">
+                    <div className="banner-inner-wrapper">
+                  
+                    </div>
+                </div>
+                <div id="top-banner-4" className="banner">
+                    <div className="banner-inner-wrapper">
 
-      <div id="slide" ref={slideRef}>
-        {data.map((item) => (
-          <div
-            key={item.id}
-            className="item"
-            style={{ backgroundImage: `url(${item.imgUrl})` }}
-          >
-            <div className="content">
-              <div className="name">{item.name}</div>
-              <div className="des">{item.desc}</div>
-              <button>See more</button>
+                    </div>
+                </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <div className="buttons">
-        <button id="prev" onClick={handleClickPrev}>
-          <FontAwesomeIcon icon={faAngleLeft} />
-        </button>
-        <button id="next" onClick={handleClickNext}>
-          <FontAwesomeIcon icon={faAngleRight} />
-        </button>
-      </div>
-    </div>
+            <nav>
+                <div className="controls">
+                    <label for="banner1"><span className="progressbar"><span
+                                className="progressbar-fill"></span></span><span>01</span> Intro</label>
+                    <label for="banner2"><span className="progressbar"><span
+                                className="progressbar-fill"></span></span><span>02</span> Work</label>
+                    <label for="banner3"><span className="progressbar"><span
+                                className="progressbar-fill"></span></span><span>03</span> About</label>
+                    <label for="banner4"><span className="progressbar"><span
+                                className="progressbar-fill"></span></span><span>04</span> Contacts</label>
+                </div>
+            </nav>
+        </div>
   );
 };
 
-export default Slider;
+export default CarouselHome;

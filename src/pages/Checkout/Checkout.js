@@ -6,7 +6,10 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import Order from "../Order/Order";
+import { Link } from "react-router-dom";
+import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer";
+import { ChevronRight } from 'react-bootstrap-icons';
 
 
 const Checkout = () => {
@@ -15,11 +18,17 @@ const Checkout = () => {
   const navigateModal = withReactContent(Swal);
   const [orderId, setOrderId] = useState("");
 
+  let tax = 0;
+  let total = 0;
   let subTotal = 0;
 
   const handleCalcSubTotal = (qty, price) => {
-    let itemSubTotal = qty * price;
+    let itemTotal = qty * price;
+    let itemTax = itemTotal * 0.05;
+    let itemSubTotal = qty * price + itemTax;
     subTotal += itemSubTotal;
+    total += itemTotal;
+    tax += itemTax;
   };
 
   if (items.length === 0) {
@@ -40,37 +49,45 @@ const Checkout = () => {
   } else {
     return (
       <>
-    <div className="container">
-      <div className="purchase__container row">
-        <div className="checkout col order-1 order-md-2">
-          <div className="contact">
-            <div className="contact__information">
-              <h1 className="contact__title">Complete con su informacion</h1>
-              <CheckoutForm id={orderId} setId={setOrderId} />
-            </div>
+        <Header />
+        <header class="container">
+          <h1>Shopping Cart</h1>
+          <ul class="breadcrumb">
+            <a ><li><Link to="/" className="nav__link nav-link">Inicio</Link></li></a>
+            <ChevronRight  />
+            <a href="#" disabled><li>Cart</li></a>
+            <ChevronRight  />
+            <a href="#" disabled><li>Checkout</li></a>
+          </ul>
+          <span class="count">{items.length} artículos en la bolsa</span>
+        </header>
+        <section class="container">
+          <div>
+            
+              {items.map((product) => {
+                handleCalcSubTotal(product.quantity, product.price);
+                return (
+                  <Item showAs="checkout" product={product} key={product.id} />
+                );
+              })}
+
           </div>
-        </div>
-        <div className="summary col order-lg-2">
-          <h1 className="summary__title">Resumen de compra</h1>
-          
-          <div className="summary__items">
-            {items.map((product) => {
-              handleCalcSubTotal(product.quantity, product.price);
-              return (
-                <Item showAs="CartItem" product={product} key={product.id} />
-              );
-            })}
+        </section>
+        <section class="container purcha" v-if="products.length > 0">
+          <div class="promotion">
+            <h2 for="promo-code">Complete con su informacion</h2>
+            <CheckoutForm id={orderId} setId={setOrderId} />
           </div>
-          <hr className="divisor" />
-          
-          <div className="flex-row cart__total">
-            <h4>Total</h4>
-            <span>${subTotal}</span>
+          <div class="summary">
+          <h2 for="promo-code">Monto a Pagar</h2>
+            <ul>
+              <li class="total">Subtotal <span class="Subtotal cart__total">{total}$</span></li>
+              <li>Impuesto <span class="tax cart__total">{tax}$</span></li>
+              <li class="total">Total <span class="total cart__total">{subTotal}$</span></li>
+            </ul>
           </div>
-        </div>
-      </div>
-    </div>
-      <Footer />
+        </section>
+        <Footer />
       </>
     );
   }

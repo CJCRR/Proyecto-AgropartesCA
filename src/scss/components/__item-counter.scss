@@ -1,18 +1,18 @@
 .ItemCounter{
-    margin-bottom: 5px;
+    padding-left: 10px;
     display: flex;
     align-items: center;
-    gap: 1em;
-
+    gap: 5px;
     .counter__btn{
-        padding: .4em 1em;
         &--cart{
             padding: .1em .3em;
-            border-radius: 20px;
+            border-style: none;
         }
     }
     .counter__results{
-        font-family: $numbers;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
     }
 }
 

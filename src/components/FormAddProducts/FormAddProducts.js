@@ -31,7 +31,6 @@ const FormAddProducts = () => {
             setTitle('');
             setDescription('');
             setId('');
-            setIndexConfiguration('');
             setPrice(0);
             setCategory('');
             setImage('');
@@ -42,8 +41,8 @@ const FormAddProducts = () => {
     };
 
     return (
-        <form className='formAddUpdate' onSubmit={handleSubmit}>
-            <div>
+        <form className='formAddUpdate row' onSubmit={handleSubmit}>
+            <div className='col boxAdd'>
                 <label htmlFor="title">Título:</label>
                 <input
                     type="text"
@@ -53,16 +52,8 @@ const FormAddProducts = () => {
                     required
                 />
             </div>
-            <div>
-                <label htmlFor="description">Descripción:</label>
-                <textarea
-                    id="description"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    required
-                ></textarea>
-            </div>
-            <div>
+            
+            <div className='col boxAdd'>
                 <label htmlFor="id">Id:</label>
                 <input
                     type="text"
@@ -72,7 +63,7 @@ const FormAddProducts = () => {
                     required
                 />
             </div>
-            <div>
+            <div className='col boxAdd'>
                 <label htmlFor="price">Precio:</label>
                 <input
                     type="number"
@@ -82,7 +73,7 @@ const FormAddProducts = () => {
                     required
                 />
             </div>
-            <div>
+            <div className='col boxAdd'>
                 <label htmlFor="category">Categoría:</label>
                 <input
                     type="text"
@@ -92,7 +83,7 @@ const FormAddProducts = () => {
                     required
                 />
             </div>
-            <div>
+            <div className='col boxAdd'>
                 <label htmlFor="image">URL de la imagen:</label>
                 <input
                     type="text"
@@ -102,7 +93,7 @@ const FormAddProducts = () => {
                     required
                 />
             </div>
-            <div>
+            <div className='col boxAdd'>
                 <label htmlFor="stock">Stock:</label>
                 <input
                     type="number"
@@ -112,7 +103,16 @@ const FormAddProducts = () => {
                     required
                 />
             </div>
-            <button type="submit">Agregar Producto</button>
+            <div className='boxAdd'>
+                <label htmlFor="description">Descripción:</label>
+                <textarea
+                    id="description"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    required
+                ></textarea>
+            </div>
+            <button className='buttonAdd' type="submit">Agregar Producto</button>
         </form>
     );
 };

@@ -41,14 +41,14 @@ const UpdateProducts = () => {
     };
 
     return (
-        <form className='formAddUpdate' onSubmit={handleSubmit}>
+        <form className='formAddUpdate row' onSubmit={handleSubmit}>
             <input
                 type="text"
                 placeholder="ID del producto"
                 value={productId}
                 onChange={(e) => setProductId(e.target.value)}
             />
-            <div>
+            <div className='col boxAdd'>
                 <label htmlFor="title">Título:</label>
                 <input
                     type="text"
@@ -58,16 +58,7 @@ const UpdateProducts = () => {
                     required
                 />
             </div>
-            <div>
-                <label htmlFor="description">Descripción:</label>
-                <textarea
-                    id="description"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    required
-                ></textarea>
-            </div>
-            <div>
+            <div className='col boxAdd'>
                 <label htmlFor="price">Precio:</label>
                 <input
                     type="number"
@@ -77,7 +68,7 @@ const UpdateProducts = () => {
                     required
                 />
             </div>
-            <div>
+            <div className='col boxAdd'>
                 <label htmlFor="category">Categoría:</label>
                 <input
                     type="text"
@@ -87,17 +78,7 @@ const UpdateProducts = () => {
                     required
                 />
             </div>
-            <div>
-                <label htmlFor="image">URL de la imagen:</label>
-                <input
-                    type="text"
-                    id="image"
-                    value={image}
-                    onChange={(e) => setImage(e.target.value)}
-                    required
-                />
-            </div>
-            <div>
+            <div className='col boxAdd'>
                 <label htmlFor="stock">Stock:</label>
                 <input
                     type="number"
@@ -107,8 +88,26 @@ const UpdateProducts = () => {
                     required
                 />
             </div>
-            {/* Campos del formulario para los demás datos */}
-            <button type="submit">Actualizar Producto</button>
+            <div className='col boxAdd'>
+                <label htmlFor="image">URL de la imagen:</label>
+                <input
+                    type="text"
+                    id="image"
+                    value={image}
+                    onChange={(e) => setImage(e.target.value)}
+                    required
+                />
+            </div>
+            <div className='boxAdd'>
+                <label htmlFor="description">Descripción:</label>
+                <textarea
+                    id="description"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    required
+                ></textarea>
+            </div>
+            <button className='buttonUpdate' type="submit">Actualizar Producto</button>
         </form>
     );
 };

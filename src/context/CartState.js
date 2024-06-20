@@ -1,4 +1,4 @@
-import { useContext, createContext, useState } from "react";
+import { useContext, createContext, useState, useEffect } from "react";
 import React from "react";
 
 const initialState = {
@@ -15,8 +15,14 @@ const initialState = {
 const CartContext = createContext(initialState);
 
 const CartState = ({ children }) => {
-  const [items, setItems] = useState([]);
+  const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  const [items, setItems] = useState(storedCartItems);
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(items));
+  }, [items]);
+
   const handleOpenCart = () => {
     setIsOpen(true);
   };
@@ -24,39 +30,29 @@ const CartState = ({ children }) => {
     setIsOpen(false);
   };
   const handleAddItemToCart = (item, quantity) => {
-    const temp = [...items];
+    const existingItem = items.find((i) => i.id === item.id);
 
-    const found = temp.find((product) => product.id === item.id);
-
-    if (found) {
-      found.quantity += quantity;
+    if (existingItem) {
+      const updatedItems = items.map((i) =>
+        i.id === item.id ? { ...i, quantity: i.quantity + quantity } : i
+      );
+      setItems(updatedItems);
     } else {
-      item.quantity = quantity;
-      temp.push(item);
+      setItems([...items, { ...item, quantity }]);
     }
-    setItems([...temp]);
   };
   const handleNumberOfItems = () => {
-    const total = items.length;
-    return total;
+    return items.reduce((total, item) => total + item.quantity, 0);
   };
   const handleDeleteCartItem = (id) => {
-    const temp = [...items];
-    const found = temp.find((product) => product.id === id);
-    const index = temp.indexOf(found);
-    if (found) {
-      temp.splice(index, 1);
-    }
-    setItems([...temp]);
+    const updatedItems = items.filter((item) => item.id !== id);
+    setItems(updatedItems);
   };
   const handleUpdateCartItemQty = (id, quantity) => {
-    const temp = [...items];
-    const found = temp.find((product) => product.id === id);
-
-    if (found) {
-      found.quantity = quantity;
-    }
-    setItems([...temp]);
+    const updatedItems = items.map((item) =>
+      item.id === id ? { ...item, quantity } : item
+    );
+    setItems(updatedItems);
   };
   const handleEmptyCart = () => {
     setItems([]);

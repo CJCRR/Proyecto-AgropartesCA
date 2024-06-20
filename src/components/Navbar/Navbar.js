@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import CartWidgets from "../CartWidgets/CartWidgets";
-
 import { Link, NavLink } from "react-router-dom";
 import { getCategories } from "../../utils/firebaseFetching";
 import { useEffect } from "react";
@@ -49,7 +48,7 @@ const Navbar = () => {
               {categories && categories.map((category) => {
                 return (
                   <Link
-                    to={`/shop/category/${category.name}`}
+                    to={`/productos/category/${category.name}`}
                     className="navSubCategory nav__link nav__link--category"
                     key={category.id}
                     >

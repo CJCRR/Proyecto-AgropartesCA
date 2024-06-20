@@ -2,11 +2,23 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import NavInfo from "../../components/NavInfo/NavInfo";
+import { Link, NavLink } from "react-router-dom";
+import { ChevronRight } from 'react-bootstrap-icons';
 
 const Envios = () => {
     return (
         <>
             <Header />
+            <header class="container">
+                <h1>Terminos y Condiciones</h1>
+                <ul class="breadcrumb">
+                    <a ><li><Link to="/" className="nav__link nav-link">Inicio</Link></li></a>
+                    <ChevronRight />
+                    <a><li><NavLink to="/TerminosYCondiciones" className="nav__link nav-link">Terminos y Condiciones</NavLink></li></a>
+                    <ChevronRight />
+                    <a href="#" disabled><li>Envios</li></a>
+                </ul>
+            </header>
             <section class="container">
             <div class="row row-cols-1 row-cols-sm-2">
 

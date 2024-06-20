@@ -37,7 +37,7 @@ const Cart = () => {
           </div>
         ) : (
           <div className="cart__content">
-            <h3 className="cart__title">Mi Carrito</h3>
+            <h3 className="cartMi">Mi Carrito</h3>
             <div className="cart__items">
               {items.map((product) => {
                 handleCalcSubTotal(product.quantity, product.price);
@@ -53,7 +53,7 @@ const Cart = () => {
               <span>${total}</span>
             </div>
             <div className="flex-row cart__total">
-              <h4>Tax%</h4>
+              <h4>Impuesto</h4>
               <span>${tax}</span>
             </div>
             <div className="flex-row cart__total">

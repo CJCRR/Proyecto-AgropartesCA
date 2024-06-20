@@ -3,13 +3,22 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import instagram from "../../instagram.svg";
 import whatsapp from "../../whatsapp.svg";
-
+import { Link } from "react-router-dom";
+import { ChevronRight } from 'react-bootstrap-icons';
 
 
 const Contacto = () => {
     return (
         <>
         <Header />
+        <header class="container">
+          <h1>Contactanos</h1>
+          <ul class="breadcrumb">
+            <a ><li><Link to="/" className="nav__link nav-link">Inicio</Link></li></a>
+            <ChevronRight  />
+            <a href="#" disabled><li>Contacto</li></a>
+          </ul>
+        </header>
         
         <div className="contacto">
             <div className="ubicacion container justify-content-center">

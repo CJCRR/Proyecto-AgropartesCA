@@ -40,7 +40,7 @@
 }
 
 .seccion-nosotros {
-    min-height: 35vh;
+    min-height: 30vh;
     background-color: $color-principal1;
     text-align: center;
     justify-content: center;
@@ -50,14 +50,20 @@
         color: $color-principal3;
         font-size: 35px;
         padding-top: 15px;
+        font-family: "Montserrat", sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
     }
 
     p {
         @include medidas-parrafos;
+        font-family: "Montserrat", sans-serif;
+            font-weight: bold;
+
     }
 
     hr {
-        margin-top: 25px;
+        margin-top: 15px;
         color: $color-principal3;
     }
 
@@ -84,6 +90,27 @@
 
         a {
             @include hover;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .seccion-nosotros {
+        
+        h2 {
+            font-size: 15px
+        }
+        p {
+            font-size: 12px ;
+        }
+        hr {
+            margin-top: 2px;
+        }
+        .imgn {
+            img {
+                width: 25px;
+                margin: 0;
+            }
         }
     }
 }

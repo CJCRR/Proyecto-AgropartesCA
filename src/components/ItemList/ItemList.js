@@ -239,7 +239,7 @@ const ItemList = ({ products = [] }) => {
             </div>
           </Col>
         </Row>
-        <Offcanvas show={showSidebar} onHide={handleSidebar} placement="start">
+        <Offcanvas className="offcanvas" show={showSidebar} onHide={handleSidebar} placement="start">
 
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>Filtros</Offcanvas.Title>

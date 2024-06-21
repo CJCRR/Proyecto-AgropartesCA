@@ -23,9 +23,9 @@ const Home = () => {
         <h2>Venta de repuestos de camiones y tractores diésel</h2>
         <p className="p-index">Somos una empresa en la distribución y venta de repuestos a nivel nacional que atiende las necesidades
           de nuestros clientes de forma rápida y eficiente, suministrando productos de alta rotación, calidad y
-          garantizados a precios competitivos. Constituimos un solido equipo de trabajo.</p>
+          garantizados a precios competitivos.</p>
         <hr />
-        <div className="imgn d-none d-md-block">
+        <div className="imgn ">
           <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1698938278/buji_scldlw.png" className="buji" alt="" />
           <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1698938284/ventilador_hrw8jg.png" className="ventilador" alt="" />
           <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1698938281/piesa_oeka4s.png" className="piesa" alt="" />

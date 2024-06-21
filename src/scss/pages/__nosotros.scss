@@ -129,3 +129,32 @@
     height: 100px;
     width: 250px;
   }
+
+  @media only screen and (max-width: 800px) {
+    .nosotros {
+      min-height: 60vh;
+    }
+    .p-nosotros {
+      min-height: 20vh;
+      h2 {
+        font-size: 15px;
+      }
+      p {
+        font-size: 12px ;
+      }
+    }
+    .p2-nosotros {
+      min-height: 30vh;
+      h2 {
+        font-size: 15px;
+      }
+      p {
+        font-size: 12px ;
+      }
+    }
+
+    .sliderr {
+      width: 350px;
+
+    }
+  }

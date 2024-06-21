@@ -79,13 +79,13 @@ const CheckoutForm = ({ setId }) => {
         {(formik) => (
           <Form className="form">
             <div className="form__group">
-              <TextField
+              <TextField showAs="field2"
                 label="First name"
                 name="firstName"
                 type="text"
                 className="form__item"
               />
-              <TextField
+              <TextField showAs="field2"
                 label="Last name"
                 name="lastName"
                 type="text"

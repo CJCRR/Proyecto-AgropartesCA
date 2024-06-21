@@ -67,12 +67,21 @@
             }
         }
 
+
         .divisor {
             border: 2px solid black;
             margin-top: 10px;
             margin-bottom: 5px;
         }
     }
+}
+
+.cart__total {
+    margin-right: 5px;
+    margin-left: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .cartMi {
@@ -87,5 +96,11 @@
         &.show {
             width: 300px;
         }
+    }
+}
+
+@media (max-width: 767px) {
+    .offcanvas {
+        width: 80vw;
     }
 }

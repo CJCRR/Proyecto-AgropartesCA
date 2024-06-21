@@ -9,7 +9,7 @@ const Footer = () => {
                 <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1698938277/AGROPARTES_crc4ir.png" alt="Logo Agropartes" className="agropar" />
                 <div class="links">
                     <div class="links-1">
-                        <h2>Nosotros</h2>
+                        <h2>Sobre Nosotros</h2>
                         <a><Link to="/" className="nav__link">Inicio</Link></a>
                         <a><NavLink to="/Nosotros" className="nav__link">Nosotros</NavLink></a>
                         <a><NavLink to="/contacto" className="nav__link">Contacto</NavLink></a>

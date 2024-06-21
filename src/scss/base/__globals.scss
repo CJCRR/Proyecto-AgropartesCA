@@ -25,4 +25,26 @@ body{
 }
 
 
-// sombra
+// slick
+
+.slick-prev,
+.slick-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Estilos para acercar las flechas a los elementos */
+.slick-prev {
+  
+}
+
+.slick-next {
+  
+}
+
+/* Estilos adicionales para personalizar las flechas */
+.slick-prev:before,
+.slick-next:before {
+  font-size: 30px;
+  color: #333;
+}

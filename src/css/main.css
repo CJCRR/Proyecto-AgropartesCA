@@ -43,6 +43,20 @@ body {
   justify-content: space-between;
 }
 
+.slick-prev,
+.slick-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Estilos para acercar las flechas a los elementos */
+/* Estilos adicionales para personalizar las flechas */
+.slick-prev:before,
+.slick-next:before {
+  font-size: 30px;
+  color: #333;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -147,6 +161,11 @@ body {
   font-size: 1.2em;
 }
 
+@media only screen and (max-width: 800px) {
+  .form__item {
+    width: 100px;
+  }
+}
 .field {
   flex: 1;
   display: flex;
@@ -186,6 +205,11 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+@media only screen and (max-width: 800px) {
+  .field2 {
+    width: 100px;
+  }
+}
 .overlay {
   position: fixed;
   left: 0;
@@ -494,6 +518,14 @@ footer.bottom .links a {
   margin-bottom: 5px;
 }
 
+.cart__total {
+  margin-right: 5px;
+  margin-left: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .cartMi {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
@@ -503,6 +535,11 @@ footer.bottom .links a {
 @media only screen and (max-width: 762px) {
   .cart.show {
     width: 300px;
+  }
+}
+@media (max-width: 767px) {
+  .offcanvas {
+    width: 80vw;
   }
 }
 .search {
@@ -786,6 +823,12 @@ input:hover {
     align-items: center;
   }
 }
+@media only screen and (max-width: 480px) {
+  .products {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -824,7 +867,7 @@ input:hover {
 }
 
 .seccion-nosotros {
-  min-height: 35vh;
+  min-height: 30vh;
   background-color: rgb(226, 83, 0);
   text-align: center;
   justify-content: center;
@@ -834,6 +877,9 @@ input:hover {
   color: white;
   font-size: 35px;
   padding-top: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .seccion-nosotros p {
   display: inline-block;
@@ -842,9 +888,11 @@ input:hover {
   margin-top: 15px;
   margin-bottom: 15px;
   width: 80%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
 }
 .seccion-nosotros hr {
-  margin-top: 25px;
+  margin-top: 15px;
   color: white;
 }
 .seccion-nosotros .imgn {
@@ -875,6 +923,21 @@ input:hover {
   transition: 0.9s;
 }
 
+@media only screen and (max-width: 800px) {
+  .seccion-nosotros h2 {
+    font-size: 15px;
+  }
+  .seccion-nosotros p {
+    font-size: 12px;
+  }
+  .seccion-nosotros hr {
+    margin-top: 2px;
+  }
+  .seccion-nosotros .imgn img {
+    width: 25px;
+    margin: 0;
+  }
+}
 .servicios-1 {
   background-image: url(../../npr.jpg);
   background-position: center;
@@ -1471,6 +1534,32 @@ body h1 {
   width: 250px;
 }
 
+@media only screen and (max-width: 800px) {
+  .nosotros {
+    min-height: 60vh;
+  }
+  .p-nosotros {
+    min-height: 20vh;
+  }
+  .p-nosotros h2 {
+    font-size: 15px;
+  }
+  .p-nosotros p {
+    font-size: 12px;
+  }
+  .p2-nosotros {
+    min-height: 30vh;
+  }
+  .p2-nosotros h2 {
+    font-size: 15px;
+  }
+  .p2-nosotros p {
+    font-size: 12px;
+  }
+  .sliderr {
+    width: 350px;
+  }
+}
 .purchase__container {
   display: flex;
 }

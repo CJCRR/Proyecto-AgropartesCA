@@ -25,13 +25,17 @@ const Navbar = () => {
     fetchCategories();
   }, []);
   return (
-    
+
     <nav className="header__nav navbar  navbar-expand-lg ">
       <div className="container-fluid">
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <CartWidgets />
+        <div className="togglerCart">
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div className="widgetsCart">
+          <CartWidgets />
+        </div>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
@@ -44,16 +48,16 @@ const Navbar = () => {
               <NavLink to="/Productos" className="nav__link nav-item nav-link">PRODUCTOS</NavLink>
             </li>
             <NavDropdown className="nav__link nav-item" title="CATEGORIAS" id="collapsible-nav-dropdown" onClick={handleOpen}>
-            <div className="navCategory nav-link">
-              {categories && categories.map((category) => {
-                return (
-                  <Link
-                    to={`/productos/category/${category.name}`}
-                    className="navSubCategory nav__link nav__link--category"
-                    key={category.id}
+              <div className="navCategory nav-link">
+                {categories && categories.map((category) => {
+                  return (
+                    <Link
+                      to={`/productos/category/${category.name}`}
+                      className="navSubCategory nav__link nav__link--category"
+                      key={category.id}
                     >
-                    {category.name}
-                  </Link>
+                      {category.name}
+                    </Link>
                   );
                 })}
               </div>
@@ -63,9 +67,9 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        
+
       </div>
-      
+
     </nav>
   );
 };

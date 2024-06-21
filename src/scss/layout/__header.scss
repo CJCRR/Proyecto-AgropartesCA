@@ -1,12 +1,12 @@
-
-
 .header {
     display: flex;
     justify-content: space-around;
-    padding: 1rem ;
+    padding: 1rem;
+
     &__nav {
         gap: 10px;
         padding: 1rem 0;
+
         .nav__link {
             background: none;
             border: none;
@@ -21,6 +21,7 @@
             cursor: pointer;
             transition: all 0.3s ease-in;
             @include hover-2;
+
             &:after {
                 position: absolute;
                 content: "";
@@ -33,14 +34,17 @@
                 transform: scaleX(0);
                 transform-origin: right;
             }
+
             &:hover:after {
                 transform: scaleX(1);
                 transform-origin: left;
             }
+
             &--category {
                 margin: 0;
                 border-radius: 0;
                 padding: 8px 16px;
+
                 &:after {
                     content: "";
                     background: none;
@@ -52,11 +56,16 @@
     }
 }
 
+.container-fluid {
+
+}
+
 .navCategory {
     display: flex;
     flex-direction: column;
     align-items: baseline;
     @include hover-2;
+
     .navSubCategory {
         &::before {
             content: '';
@@ -71,9 +80,17 @@
             transform-origin: left;
             transition: transform 0.5s ease-in-out;
         }
+
         &:hover::before {
             transform: scaleX(1);
         }
+
         font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .widgetsCart {
+        margin-left: 200px;
     }
 }

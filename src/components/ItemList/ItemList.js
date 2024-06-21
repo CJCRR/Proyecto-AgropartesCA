@@ -54,7 +54,7 @@ const ItemList = ({ products = [] }) => {
       );
     }
 
-    
+
 
     return pageNumbers;
   };
@@ -63,7 +63,7 @@ const ItemList = ({ products = [] }) => {
     // Redirige a la ruta de los productos de la subcategoría
     navigate(`/productos/category/${category}/sub/${subCategory}`);
   };
-  
+
   const [showSidebar, setShowSidebar] = useState(false);
 
   const handleSidebar = () => setShowSidebar(!showSidebar);
@@ -285,11 +285,11 @@ const ItemList = ({ products = [] }) => {
                 <Accordion.Body>
                   <ul className="breadcrumb">
                     <li><CaretRight /></li>
-                    <a><li>Motor</li></a>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('ISUZU', 'Frenos')} >Frenos</li>
                   </ul>
                   <ul className="breadcrumb">
                     <li><CaretRight /></li>
-                    <a><li>Motor</li></a>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('ISUZU', 'Inyeccion')} >Inyección</li>
                   </ul>
                 </Accordion.Body>
               </Accordion.Item>
@@ -336,7 +336,7 @@ const ItemList = ({ products = [] }) => {
                 <Accordion.Body>
                   <ul className="breadcrumb">
                     <li><CaretRight /></li>
-                    <a><li>Motor</li></a>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('CUMMINS', 'Motor')} >Motor</li>
                   </ul>
                   <ul className="breadcrumb">
                     <li><CaretRight /></li>

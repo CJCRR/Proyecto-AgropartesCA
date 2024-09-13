@@ -958,37 +958,16 @@ input:hover {
   margin-top: 50px;
 }
 
-.info-small-desc {
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.5em;
-  color: #452c2c;
-}
-
-.info-small-desc {
-  font-size: 1em;
-}
-
-.go-corner {
+.servicios-2 div .item-hints {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  width: 2em;
-  height: 2em;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  background: linear-gradient(135deg, #6293c8, #384c6c);
-  border-radius: 0 4px 0 32px;
+  margin-top: 50px;
+  margin-left: 7px;
 }
-
-.info-card {
-  display: block;
-  position: relative;
-  max-width: 200px;
-  max-height: 320px;
-  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+.servicios-2 div .item-hints .info-card {
+  max-height: 270px;
+  text-align: center;
   border-radius: 10px;
   padding: 2em 1.2em;
   transition: all 0.5s;
@@ -1002,20 +981,14 @@ input:hover {
   border: 1px solid rgba(255, 255, 255, 0.15);
   font-family: Arial, Helvetica, sans-serif;
 }
-
-.info-card:hover {
-  border: 1px solid black;
-  transform: scale(1.05);
-}
-
-.info-card:before {
+.servicios-2 div .item-hints .info-card:before {
   content: "";
   position: absolute;
   z-index: -1;
   top: -16px;
   right: -16px;
-  background: linear-gradient(135deg, #364a60, #384c6c);
   background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   height: 32px;
   width: 32px;
   border-radius: 32px;
@@ -1023,132 +996,38 @@ input:hover {
   transform-origin: 50% 50%;
   transition: transform 0.35s ease-out;
 }
-
-.info-card:hover:before {
+.servicios-2 div .item-hints .info-card:hover {
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+.servicios-2 div .item-hints .info-card:hover:before {
   transform: scale(28);
 }
-
-.info-card:hover .info-small-desc {
+.servicios-2 div .item-hints .info-card:hover .info-small-desc {
   transition: all 0.5s ease-out;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgb(226, 83, 0);
 }
-
-.info-card:hover .infor-card-title {
+.servicios-2 div .item-hints .info-card:hover .hint-dot {
   transition: all 0.5s ease-out;
-  color: #ffffff;
+  color: rgb(226, 83, 0);
 }
-
-.servicios-2 div .item-hints {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
-}
-.servicios-2 div .item-hints .hint {
-  margin: 20px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.servicios-2 div .item-hints .hint .hint-dot {
+.servicios-2 div .item-hints .info-card .hint-dot {
+  font-size: 120px;
+  color: black;
   z-index: 3;
-  border: 4px solid black;
-  border-radius: 50%;
   width: 150px;
   height: 150px;
-  font-size: 90px;
-  -webkit-transform: translate(0%, 0%) scale(0.95);
-  transform: translate(0%, 0%) scale(0.95);
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(255, 255, 255);
-  background-color: black;
-  color: white;
-  text-decoration: none;
-  text-align: center;
+  color: black;
 }
-.servicios-2 div .item-hints .hint .hint-dot:hover {
-  color: rgb(177, 111, 54);
-  transition: 0.9s;
-}
-.servicios-2 div .item-hints .hint .hint-content {
-  width: 230px;
-  position: absolute;
-  z-index: 5;
-  padding: 22px 0;
-  opacity: 0;
-  transition: opacity 0.7s ease, visibility 0.7s ease;
-  color: rgb(177, 111, 54);
-  visibility: hidden;
-  pointer-events: none;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-}
-.servicios-2 div .item-hints .hint .hint-content:hover {
-  color: rgb(177, 111, 54);
-  transition: 0.9s;
-}
-.servicios-2 div .item-hints .hint .hint-content p {
-  width: 180px;
-  font-size: 20px;
-  background-color: black;
-  border-radius: 10px;
-}
-.servicios-2 div .item-hints .hint .hint-content::after {
-  -webkit-transform-origin: 0 50%;
-  transform-origin: 0 50%;
-  -webkit-transform: rotate(-225deg);
-  transform: rotate(-225deg);
-  bottom: 29px;
-  left: 0;
-  width: 26px;
-  content: "";
-  background-color: black;
-  height: 4px;
-  position: absolute;
-  opacity: 1;
-  -webkit-transition: opacity 0.5s ease;
-  transition: opacity 0.5s ease;
-  -webkit-transition-delay: 0s;
-  transition-delay: 0s;
-}
-.servicios-2 div .item-hints .hint .hint-content::before {
-  width: 0px;
-  bottom: 29px;
-  left: 0;
-  content: "";
-  background-color: black;
-  height: 4px;
-  position: absolute;
-  transition: width 0.4s;
-}
-.servicios-2 div .item-hints .hint:hover .hint-content {
-  position: absolute;
-  z-index: 5;
-  padding: 20px 0;
-  opacity: 1;
-  -webkit-transition: opacity 0.7s ease, visibility 0.7s ease;
-  transition: opacity 0.7s ease, visibility 0.7s ease;
-  color: rgb(255, 255, 255);
-  visibility: visible;
-  pointer-events: none;
-}
-.servicios-2 div .item-hints .hint:hover .hint-content::before {
-  width: 180px;
-  transition: width 0.4s;
-}
-.servicios-2 div .item-hints .hint:hover .hint-content::after {
-  opacity: 1;
-  visibility: visible;
-}
-.servicios-2 div .item-hints .hint[data-position="4"] .hint-content {
-  bottom: 124px;
-  left: 50%;
-  margin-left: 56px;
+.servicios-2 div .item-hints .info-card .info-small-desc {
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1em;
+  color: black;
 }
 
 .ramdonProducts {

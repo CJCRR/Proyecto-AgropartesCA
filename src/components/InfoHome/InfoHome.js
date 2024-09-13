@@ -41,46 +41,44 @@ const InfoHome = () => {
             <h1>Servicios</h1>
             <div>
                 <Slider {...settings} className="infoHome">
+
                     <div className="item-hints ">
-                        <div className="hint" data-position="4">
-                            <span className="hint-radius"></span>
+                        <div class="info-card" data-position="4">
                             <span className="hint-dot"><Icon icon="iconoir:delivery-truck" /></span>
-                            <div className="hint-content do--split-children">
-                                <p>ENVIOS NACIONALES</p>
-                            </div>
+                            <p class="info-small-desc">
+                                ENVIOS NACIONALES
+                            </p>
                         </div>
                     </div>
 
-                    <div className="item-hints ">
-                        <div className="hint" data-position="4">
-                            <span className="hint-radius"></span>
+                    <div className="item-hints">
+                        <div class="info-card" data-position="4">
                             <span className="hint-dot"><Icon icon="fluent:wallet-credit-card-20-regular" className="iconServicios" /></span>
-                            <div className="hint-content do--split-children">
-                                <p>MEDIOS DE PAGO</p>
-                            </div>
+                            <p class="info-small-desc">
+                                MEDIOS DE PAGO
+                            </p>
                         </div>
                     </div>
 
-                    <div className="item-hints ">
-                        <div className="hint" data-position="4">
-                            <span className="hint-radius"></span>
+                    <div className="item-hints">
+                        <div class="info-card" data-position="4">
                             <span className="hint-dot"><Icon icon="lucide:package-check" /></span>
-                            <div className="hint-content do--split-children">
-                                <p>PRODUCTOS DE CALIDAD</p>
-                            </div>
+                            <p class="info-small-desc">
+                                PRODUCTOS DE CALIDAD
+                            </p>
                         </div>
                     </div>
 
-                    <div className="item-hints ">
-                        <div className="hint" data-position="4">
-                            <span className="hint-radius"></span>
+                    <div className="item-hints">
+                        <div class="info-card" data-position="4">
                             <span className="hint-dot"><Icon icon="lucide:package-search" /></span>
-                            <div className="hint-content do--split-children">
-                                <p>VARIEDAD DE PRODUCTOS</p>
-                            </div>
+                            <p class="info-small-desc">
+                                VARIEDAD DE PRODUCTOS
+                            </p>
                         </div>
                     </div>
                 </Slider>
+                
             </div>
         </div>
     )

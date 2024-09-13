@@ -3,8 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { Facebook, Instagram, Linkedin } from 'react-bootstrap-icons';
 
 const Footer = () => {
-    return(
-                <div class="page-container">
+    return (
+        <div class="page-container">
             <footer class="top">
                 <img src="https://res.cloudinary.com/dgvz62cer/image/upload/v1698938277/AGROPARTES_crc4ir.png" alt="Logo Agropartes" className="agropar" />
                 <div class="links">
@@ -29,9 +29,15 @@ const Footer = () => {
                             progreso.
                         </p>
                         <div className="socials">
-                            <Facebook className="social-icon" />
-                            <Instagram className="social-icon" />
-                            <Linkedin className="social-icon" />
+                            <a className="links-2" href="https://www.instagram.com/agropartess/" target="_blank">
+                                <Instagram className="social-icon" />
+                            </a>
+                            <a className="links-2" href="https://www.instagram.com/alphadieselca/" target="_blank">
+                                <Instagram className="social-icon" />
+                            </a>
+                            <a className="links-2" href="https://www.linkedin.com/in/cristohper-rodríguez-82ba93281/" target="_blank">
+                                <Linkedin className="social-icon" />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -44,13 +50,19 @@ const Footer = () => {
                     <a><NavLink to="/contacto" className="nav__link">Contacto</NavLink></a>
                 </div>
                 <div class="links">
-                    <Facebook className="social-icon" />
-                    <Instagram className="social-icon" />
-                    <Linkedin className="social-icon" />
+                    <a className="links-2" href="https://www.instagram.com/agropartess/" target="_blank">
+                        <Instagram className="social-icon" />
+                    </a>
+                    <a className="links-2" href="https://www.instagram.com/alphadieselca/" target="_blank">
+                        <Instagram className="social-icon" />
+                    </a>
+                    <a className="links-2" href="https://www.linkedin.com/in/cristohper-rodríguez-82ba93281/" target="_blank">
+                        <Linkedin className="social-icon" />
+                    </a>
                 </div>
             </footer>
         </div>
-        
+
     );
 }
 

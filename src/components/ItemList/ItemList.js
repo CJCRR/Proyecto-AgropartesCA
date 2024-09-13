@@ -134,11 +134,23 @@ const ItemList = ({ products = [] }) => {
                     <Accordion.Body>
                       <ul className="breadcrumb">
                         <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('ISUZU', 'Clutch')} >Clutch</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
                         <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('ISUZU', 'Frenos')} >Frenos</li>
                       </ul>
                       <ul className="breadcrumb">
                         <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('ISUZU', 'Filtros')} >Filtros</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
                         <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('ISUZU', 'Inyeccion')} >Inyección</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('ISUZU', 'Motor')} >Motor</li>
                       </ul>
                     </Accordion.Body>
                   </Accordion.Item>
@@ -151,11 +163,23 @@ const ItemList = ({ products = [] }) => {
                     <Accordion.Body>
                       <ul className="breadcrumb">
                         <li><CaretRight /></li>
-                        <a><li>Motor</li></a>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('TOYOTA', 'Clutch')} >Clutch</li>
                       </ul>
                       <ul className="breadcrumb">
                         <li><CaretRight /></li>
-                        <a><li>Motor</li></a>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('TOYOTA', 'Frenos')} >Frenos</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('TOYOTA', 'Filtros')} >Filtros</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('TOYOTA', 'Inyeccion')} >Inyección</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('TOYOTA', 'Motor')} >Motor</li>
                       </ul>
                     </Accordion.Body>
                   </Accordion.Item>
@@ -168,11 +192,23 @@ const ItemList = ({ products = [] }) => {
                     <Accordion.Body>
                       <ul className="breadcrumb">
                         <li><CaretRight /></li>
-                        <a><li>Motor</li></a>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('MITSUBISHI', 'Clutch')} >Clutch</li>
                       </ul>
                       <ul className="breadcrumb">
                         <li><CaretRight /></li>
-                        <a><li>Motor</li></a>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('MITSUBISHI', 'Frenos')} >Frenos</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('MITSUBISHI', 'Filtros')} >Filtros</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('MITSUBISHI', 'Inyeccion')} >Inyección</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('MITSUBISHI', 'Motor')} >Motor</li>
                       </ul>
                     </Accordion.Body>
                   </Accordion.Item>
@@ -185,11 +221,23 @@ const ItemList = ({ products = [] }) => {
                     <Accordion.Body>
                       <ul className="breadcrumb">
                         <li><CaretRight /></li>
-                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('CUMMINS', 'Motor')} >Motor</li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('CUMMINS', 'Clutch')} >Clutch</li>
                       </ul>
                       <ul className="breadcrumb">
                         <li><CaretRight /></li>
-                        <a><li>Motor</li></a>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('CUMMINS', 'Frenos')} >Frenos</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('CUMMINS', 'Filtros')} >Filtros</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('CUMMINS', 'Inyeccion')} >Inyección</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('CUMMINS', 'Motor')} >Motor</li>
                       </ul>
                     </Accordion.Body>
                   </Accordion.Item>
@@ -202,11 +250,23 @@ const ItemList = ({ products = [] }) => {
                     <Accordion.Body>
                       <ul className="breadcrumb">
                         <li><CaretRight /></li>
-                        <a><li>Motor</li></a>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('HINO', 'Clutch')} >Clutch</li>
                       </ul>
                       <ul className="breadcrumb">
                         <li><CaretRight /></li>
-                        <a><li>Motor</li></a>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('HINO', 'Frenos')} >Frenos</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('HINO', 'Filtros')} >Filtros</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('HINO', 'Inyeccion')} >Inyección</li>
+                      </ul>
+                      <ul className="breadcrumb">
+                        <li><CaretRight /></li>
+                        <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('HINO', 'Motor')} >Motor</li>
                       </ul>
                     </Accordion.Body>
                   </Accordion.Item>
@@ -285,11 +345,23 @@ const ItemList = ({ products = [] }) => {
                 <Accordion.Body>
                   <ul className="breadcrumb">
                     <li><CaretRight /></li>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('ISUZU', 'Cluth')} >Cluth</li>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
                     <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('ISUZU', 'Frenos')} >Frenos</li>
                   </ul>
                   <ul className="breadcrumb">
                     <li><CaretRight /></li>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('ISUZU', 'Filtros')} >Filtros</li>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
                     <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('ISUZU', 'Inyeccion')} >Inyección</li>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('ISUZU', 'Motor')} >Motor</li>
                   </ul>
                 </Accordion.Body>
               </Accordion.Item>
@@ -302,11 +374,23 @@ const ItemList = ({ products = [] }) => {
                 <Accordion.Body>
                   <ul className="breadcrumb">
                     <li><CaretRight /></li>
-                    <a><li>Motor</li></a>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('TOYOTA', 'Clutch')} >Clutch</li>
                   </ul>
                   <ul className="breadcrumb">
                     <li><CaretRight /></li>
-                    <a><li>Motor</li></a>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('TOYOTA', 'Frenos')} >Frenos</li>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('TOYOTA', 'Filtros')} >Filtros</li>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('TOYOTA', 'Inyeccion')} >Inyección</li>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('TOYOTA', 'Motor')} >Motor</li>
                   </ul>
                 </Accordion.Body>
               </Accordion.Item>
@@ -319,11 +403,23 @@ const ItemList = ({ products = [] }) => {
                 <Accordion.Body>
                   <ul className="breadcrumb">
                     <li><CaretRight /></li>
-                    <a><li>Motor</li></a>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('MITSUBISHI', 'Clutch')} >Clutch</li>
                   </ul>
                   <ul className="breadcrumb">
                     <li><CaretRight /></li>
-                    <a><li>Motor</li></a>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('MITSUBISHI', 'Frenos')} >Frenos</li>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('MITSUBISHI', 'Filtros')} >Filtros</li>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('MITSUBISHI', 'Inyeccion')} >Inyección</li>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('MITSUBISHI', 'Motor')} >Motor</li>
                   </ul>
                 </Accordion.Body>
               </Accordion.Item>
@@ -336,11 +432,23 @@ const ItemList = ({ products = [] }) => {
                 <Accordion.Body>
                   <ul className="breadcrumb">
                     <li><CaretRight /></li>
-                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('CUMMINS', 'Motor')} >Motor</li>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('CUMMINS', 'Cluth')} >Cluth</li>
                   </ul>
                   <ul className="breadcrumb">
                     <li><CaretRight /></li>
-                    <a><li>Motor</li></a>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('CUMMINS', 'Frenos')} >Frenos</li>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('CUMMINS', 'Filtros')} >Filtros</li>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('CUMMINS', 'Inyeccion')} >Inyección</li>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('CUMMINS', 'Motor')} >Motor</li>
                   </ul>
                 </Accordion.Body>
               </Accordion.Item>
@@ -353,11 +461,23 @@ const ItemList = ({ products = [] }) => {
                 <Accordion.Body>
                   <ul className="breadcrumb">
                     <li><CaretRight /></li>
-                    <a><li>Motor</li></a>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('HINO', 'Clutch')} >Clutch</li>
                   </ul>
                   <ul className="breadcrumb">
                     <li><CaretRight /></li>
-                    <a><li>Motor</li></a>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('HINO', 'Frenos')} >Frenos</li>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('HINO', 'Filtros')} >Filtros</li>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('HINO', 'Inyeccion')} >Inyección</li>
+                  </ul>
+                  <ul className="breadcrumb">
+                    <li><CaretRight /></li>
+                    <li style={{ cursor: 'pointer' }} onClick={() => handleSubCategoryClick('HINO', 'Motor')} >Motor</li>
                   </ul>
                 </Accordion.Body>
               </Accordion.Item>

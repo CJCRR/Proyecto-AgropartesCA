@@ -48,7 +48,7 @@ const Item = ({ product, showAs }) => {
             <p className="card_detail_id">#{product.id} </p>
             <h3 className="card__title">{product.title}</h3>
             <span className="card__price">${product.price}</span>
-            <hr className="hrCard"/>
+            <hr className="hrCard" />
             <p className="card__price">Stock:{product.stock}</p>
             <p className="card__price">Categoria: {product.category} </p>
             <p>{product.description}</p>
@@ -81,27 +81,27 @@ const Item = ({ product, showAs }) => {
   }
   if (showAs === "checkout") {
     return (
-      <ul class="products">
-        <li class="rows">
-          <div class="col left">
-            <div class="thumbnail">
+      <ul className="products">
+        <li className="rows">
+          <div className="col left">
+            <div className="thumbnail">
               <a href="#">
                 <img src={product.image} alt={product.title} class="card-img-top" />
               </a>
             </div>
-            <div class="detaill">
-              <div class="name"><a href="#">{product.title}</a></div>
-              <div class="description">{product.id}</div>
-              <div class="price">{product.price}$</div>
+            <div className="detaill">
+              <div className="name"><a href="#">{product.title}</a></div>
+              <div className="description">{product.id}</div>
+              <div className="price">{product.price}$</div>
             </div>
           </div>
-          <div class="col right">
+          <div className="col right">
             <ItemCounter
               showAs="checkoutCounter"
               productId={product.id}
               productQty={product.quantity}
             />
-            <div class="remove">
+            <div className="remove">
               <svg className="delete" onClick={handleDelete}
                 version="1.1" x="0px"
                 y="0px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" >
@@ -115,6 +115,25 @@ const Item = ({ product, showAs }) => {
         </li>
       </ul>
     );
+  }
+  if (showAs === "listAddProducts") {
+    return (
+      <ul className="productsAddProducts">
+        <li className="" key={product.id}>
+          <div className="left">
+            <div className="rows detaill">
+            <div className="col imgList"><img src={product.image} class="card-img-top" /></div>
+              <div className="col name">{product.title}</div>
+              <div className="col description">{product.id}</div>
+              <div className="col price">{product.price}$</div>
+              <div className="name">{product.category}</div>
+              <div className="col price">Stock: {product.stock}</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    )
   }
   return (
     <>

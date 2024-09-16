@@ -8,35 +8,56 @@ const UpdateProducts = () => {
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState(0);
     const [category, setCategory] = useState('');
+    const [subCategory, setSubCategory] = useState('');
     const [image, setImage] = useState('');
     const [stock, setStock] = useState(0);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            const productRef = doc(productsCollection, productId);
-            const updatedData = {
-                title,
-                description,
-                price,
-                category,
-                image,
-                stock,
-            };
+        const updatedData = {};
 
-            await updateDoc(productRef, updatedData);
-            console.log('Producto actualizado con éxito');
-            // Restablecer los campos del formulario después de la actualización
-            setProductId('');
-            setTitle('');
-            setDescription('');
-            setPrice(0);
-            setCategory('');
-            setImage('');
-            setStock(0);
-        } catch (error) {
-            console.error('Error al actualizar el producto:', error);
+        if (title !== '') {
+            updatedData.title = title;
+        }
+        if (description !== '') {
+            updatedData.description = description;
+        }
+        if (price !== 0) {
+            updatedData.price = price;
+        }
+        if (category !== '') {
+            updatedData.category = category;
+        }
+        if (subCategory !== '') {
+            updatedData.subCategory = subCategory;
+        }
+        if (image !== '') {
+            updatedData.image = image;
+        }
+        if (stock !== 0) {
+            updatedData.stock = stock;
+        }
+
+        if (Object.keys(updatedData).length > 0) {
+            try {
+                const productRef = doc(productsCollection, productId);
+                await updateDoc(productRef, updatedData);
+                console.log('Producto actualizado con éxito');
+                // Restablecer los campos del formulario después de la actualización
+                setProductId('');
+                setTitle('');
+                setDescription('');
+                setPrice(0);
+                setCategory('');
+                setSubCategory('');
+                setImage('');
+                setStock(0);
+            } catch (error) {
+                console.error('Error al actualizar el producto:', error);
+            }
+        } else {
+            console.log('No hay cambios para actualizar');
         }
     };
 
@@ -55,7 +76,7 @@ const UpdateProducts = () => {
                     id="title"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    required
+                    
                 />
             </div>
             <div className='col boxAdd'>
@@ -65,7 +86,7 @@ const UpdateProducts = () => {
                     id="price"
                     value={price}
                     onChange={(e) => setPrice(parseFloat(e.target.value))}
-                    required
+                    
                 />
             </div>
             <div className='col boxAdd'>
@@ -75,7 +96,17 @@ const UpdateProducts = () => {
                     id="category"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    required
+                    
+                />
+            </div>
+            <div className='col boxAdd'>
+                <label htmlFor="subCategory">SubCategory:</label>
+                <input
+                    type="text"
+                    id="subCategory"
+                    value={subCategory}
+                    onChange={(e) => setSubCategory(e.target.value)}
+                    
                 />
             </div>
             <div className='col boxAdd'>
@@ -85,7 +116,7 @@ const UpdateProducts = () => {
                     id="stock"
                     value={stock}
                     onChange={(e) => setStock(parseInt(e.target.value))}
-                    required
+                    
                 />
             </div>
             <div className='col boxAdd'>
@@ -95,7 +126,7 @@ const UpdateProducts = () => {
                     id="image"
                     value={image}
                     onChange={(e) => setImage(e.target.value)}
-                    required
+                    
                 />
             </div>
             <div className='boxAdd'>
@@ -104,7 +135,7 @@ const UpdateProducts = () => {
                     id="description"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    required
+                    
                 ></textarea>
             </div>
             <button className='buttonUpdate' type="submit">Actualizar Producto</button>

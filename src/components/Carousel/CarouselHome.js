@@ -66,11 +66,11 @@ const CarouselHome = () => {
                     <label for="banner1"><span className="progressbar"><span
                                 className="progressbar-fill"></span></span><span>01</span> Intro</label>
                     <label for="banner2"><span className="progressbar"><span
-                                className="progressbar-fill"></span></span><span>02</span> Work</label>
+                                className="progressbar-fill"></span></span><span>02</span> Envios</label>
                     <label for="banner3"><span className="progressbar"><span
-                                className="progressbar-fill"></span></span><span>03</span> About</label>
+                                className="progressbar-fill"></span></span><span>03</span> Mas</label>
                     <label for="banner4"><span className="progressbar"><span
-                                className="progressbar-fill"></span></span><span>04</span> Contacts</label>
+                                className="progressbar-fill"></span></span><span>04</span> Horarios</label>
                 </div>
             </nav>
         </div>

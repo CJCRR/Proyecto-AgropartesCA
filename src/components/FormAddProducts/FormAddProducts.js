@@ -8,6 +8,7 @@ const FormAddProducts = () => {
     const [id, setId] = useState('');
     const [price, setPrice] = useState(0);
     const [category, setCategory] = useState('');
+    const [subCategory, setSubCategory] = useState('');
     const [image, setImage] = useState('');
     const [stock, setStock] = useState(0);
 
@@ -21,6 +22,7 @@ const FormAddProducts = () => {
                 id,
                 price,
                 category,
+                subCategory,
                 image,
                 stock,
             };
@@ -33,6 +35,7 @@ const FormAddProducts = () => {
             setId('');
             setPrice(0);
             setCategory('');
+            setSubCategory('')
             setImage('');
             setStock(0);
         } catch (error) {
@@ -80,6 +83,16 @@ const FormAddProducts = () => {
                     id="category"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
+                    required
+                />
+            </div>
+            <div className='col boxAdd'>
+                <label htmlFor="subCategory">SubCategory:</label>
+                <input
+                    type="text"
+                    id="subCategory"
+                    value={subCategory}
+                    onChange={(e) => setSubCategory(e.target.value)}
                     required
                 />
             </div>

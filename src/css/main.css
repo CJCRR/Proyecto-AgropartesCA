@@ -1915,6 +1915,17 @@ header .count {
   font-size: 13px;
 }
 
+.addAndUpdateProducts {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1;
+}
 .addAndUpdateProducts .addAndUpdateProducts-1 {
   gap: 40px;
 }
@@ -1941,6 +1952,44 @@ header .count {
 .formAddUpdate .buttonAdd {
   margin-top: 48px;
   margin-bottom: 20px;
+}
+
+.productsAddProducts {
+  border-top: 1px solid #ddd;
+}
+.productsAddProducts li {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  height: 100px;
+}
+.productsAddProducts li .left {
+  width: 100%;
+}
+.productsAddProducts li .left .detaill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  width: 100%;
+}
+.productsAddProducts li .left .detaill .imgList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productsAddProducts li .left .detaill .imgList img {
+  width: 120px;
+  height: 80px;
+}
+.productsAddProducts li .left .detaill .name {
+  font-size: 0.7rem;
+}
+.productsAddProducts li .left .detaill .description {
+  color: #7d7d7d;
+  font-size: 0.7rem;
+}
+.productsAddProducts li .left .detaill .price {
+  font-size: 0.8rem;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -44,9 +44,27 @@ const InfoHome = () => {
 
                     <div className="item-hints ">
                         <div class="info-card" data-position="4">
+                            <span className="hint-dot"><Icon icon="solar:delivery-broken" /></span>
+                            <p class="info-small-desc">
+                                CONTAMOS CON BAJO PEDIDOS
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="item-hints ">
+                        <div class="info-card" data-position="4">
                             <span className="hint-dot"><Icon icon="iconoir:delivery-truck" /></span>
                             <p class="info-small-desc">
                                 ENVIOS NACIONALES
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="item-hints ">
+                        <div class="info-card" data-position="4">
+                            <span className="hint-dot"><Icon icon="ic:round-delivery-dining" /></span>
+                            <p class="info-small-desc">
+                                DELIVERY GRATIS EN LA CIUDAD
                             </p>
                         </div>
                     </div>

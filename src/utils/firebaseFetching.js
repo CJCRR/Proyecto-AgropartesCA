@@ -6,6 +6,7 @@ import {
   where,
   query,
   addDoc,
+  deleteDoc
 } from "firebase/firestore";
 import { db } from "../firebase";
 
@@ -111,6 +112,26 @@ export const addNewOrder = async (order) => {
   const response = await request;
   const orderID = response.id;
   return orderID;
+};
+
+export const deleteProduct = async (id) => {
+  try {
+    const docReference = doc(productsCollection, id);
+    await deleteDoc(docReference);
+  } catch (error) {
+    console.log("Error al eliminar el producto:", error);
+    throw error;
+  }
+};
+
+export const addProduct = async (product) => {
+  try {
+    const docRef = await addDoc(productsCollection, product);
+    return docRef.id;
+  } catch (error) {
+    console.error("Error al agregar el producto:", error);
+    throw error;
+  }
 };
 
 export { productsCollection };

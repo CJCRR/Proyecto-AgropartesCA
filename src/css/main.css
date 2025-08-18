@@ -1750,7 +1750,7 @@ header .count {
     font-size: 14px;
   }
   .thumbnail,
-.detaill {
+  .detaill {
     float: left;
   }
   .thumbnail {
@@ -1760,14 +1760,14 @@ header .count {
     width: 65%;
   }
   .promotion,
-.summary {
+  .summary {
     width: 50%;
   }
   .checkout {
     width: 100%;
   }
   .checkout,
-.summary {
+  .summary {
     text-align: right;
   }
 }
@@ -1916,7 +1916,6 @@ header .count {
 }
 
 .addAndUpdateProducts {
-  position: sticky;
   top: 0;
   background: rgba(255, 255, 255, 0.5);
   -webkit-backdrop-filter: blur(2px);
@@ -1924,7 +1923,8 @@ header .count {
   border: 1px solid rgba(255, 255, 255, 0.25);
   padding: 20px;
   border-radius: 10px;
-  z-index: 1;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .addAndUpdateProducts .addAndUpdateProducts-1 {
   gap: 40px;

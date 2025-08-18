@@ -7,7 +7,7 @@ import withReactContent from "sweetalert2-react-content";
 import shopping_bag from "../../shopping-bag.svg";
 
 
-const Item = ({ product, showAs }) => {
+const Item = ({ product, showAs, onDelete }) => {
   const [itemCounter, setItemCounter] = useState(1);
 
   const { addItemToCart, openCart, deleteCartItem } = useCartContext();
@@ -117,24 +117,45 @@ const Item = ({ product, showAs }) => {
     );
   }
   if (showAs === "listAddProducts") {
-    return (
-      <ul className="productsAddProducts">
-        <li className="" key={product.id}>
-          <div className="left">
-            <div className="rows detaill">
-            <div className="col imgList"><img src={product.image} class="card-img-top" /></div>
-              <div className="col name">{product.title}</div>
-              <div className="col description">{product.id}</div>
-              <div className="col price">{product.price}$</div>
-              <div className="name">{product.category}</div>
-              <div className="col price">Stock: {product.stock}</div>
+  return (
+    <ul className="productsAddProducts">
+      <li className="" key={product.id}>
+        <div className="left">
+          <div className="rows detaill">
+            <div className="col imgList"><img src={product.image} className="card-img-top" alt={product.title} /></div>
+            <div className="col name">{product.title}</div>
+            <div className="col description">{product.id}</div>
+            <div className="col price">{product.price}$</div>
+            <div className="name">{product.category}</div>
+            <div className="col price">Stock: {product.stock}</div>
+            <div className="col">
+              <button
+                className="btn btn-danger"
+                onClick={() => {
+                  deleteModal.fire({
+                    title: <strong>¿Estás seguro de eliminar este producto?</strong>,
+                    showDenyButton: true,
+                    confirmButtonText: "Sí",
+                    denyButtonText: `Cancelar`,
+                    icon: "warning",
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      if (onDelete) {
+                        onDelete(product.id);
+                      }
+                    }
+                  });
+                }}
+              >
+                Eliminar
+              </button>
             </div>
           </div>
-        </li>
-      </ul>
-
-    )
-  }
+        </div>
+      </li>
+    </ul>
+  );
+}
   return (
     <>
 
